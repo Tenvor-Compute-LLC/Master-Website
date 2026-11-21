@@ -1,0 +1,48 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "tenvor": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Tenvor",
+      "options": {
+        "baseURL": "https://orchestrator.tenvor.io/v1",
+        "apiKey": "{file:tenvor-api-key}"
+      },
+      "models": {
+        "chat-35b-moe": {
+          "name": "Tenvor MoE Chat (35B-A3B)",
+          "reasoning": true,
+          "interleaved": {
+            "field": "reasoning_content"
+          },
+          "variants": {
+            "low": {
+              "reasoningEffort": "low"
+            },
+            "medium": {
+              "reasoningEffort": "medium"
+            },
+            "high": {
+              "reasoningEffort": "high"
+            }
+          },
+          "limit": {
+            "context": 65536,
+            "output": 65536
+          }
+        }
+      }
+    }
+  },
+  "agent": {
+    "tenvor-agent": {
+      "description": "Tenvor alpha with explicit approval for every workspace tool",
+      "mode": "primary",
+      "model": "tenvor/chat-35b-moe",
+      "permission": {
+        "*": "ask",
+        "external_directory": "deny"
+      }
+    }
+  }
+}
