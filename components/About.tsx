@@ -160,6 +160,7 @@ export default function About() {
                   <figcaption>
                     <span className="about__role mono">{m.role}</span>
                     <b className="about__name">{m.name}</b>
+                    <span className="about__focus mono accent">{m.focus}</span>
                     <p>{m.line}</p>
                     {m.quote && <blockquote>“{m.quote}”</blockquote>}
                     {(m.linkedin || m.x) && (

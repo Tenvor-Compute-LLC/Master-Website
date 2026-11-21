@@ -4,6 +4,8 @@ export type Member = {
   name: string;
   role: string;
   line: string;
+  /** Short focus areas shown in accent under the name. */
+  focus: string;
   initials: string;
   /** Path under /public, e.g. "/img/team-benjamin-bean.jpg". Empty shows the initials placeholder. */
   photo: string;
@@ -27,9 +29,9 @@ export const about = {
     { title: "The layer", body: "Tenvor is one orchestration layer that runs open models across distributed GPUs, each job in a sealed container, so anyone can start free with no card." },
   ] as StoryStep[],
   teamLabel: "The team",
-  teamLead: "A small founding team building the orchestration layer for open models.",
+  teamLead: "Two founders. One mission: open models on the GPUs the world already has.",
   team: [
-    { name: "Benjamin Lean", role: "Founder", line: "Sets the vision and direction for Tenvor.", initials: "BL", photo: "/img/team-benjamin-lean.jpg", linkedin: "https://www.linkedin.com/in/benjamin-lean", x: "", quote: "" },
-    { name: "Vishva Patel", role: "CTO & CISO", line: "Leads the platform, engineering and security.", initials: "VP", photo: "/img/team-vishva-patel.jpg", linkedin: "https://www.linkedin.com/in/vishva-vp", x: "", quote: "" },
+    { name: "Benjamin Lean", role: "Founder", focus: "Vision · Innovation · Strategy", line: "Benjamin is the original innovator behind the Tenvor concept, driving the company's vision, strategic direction, and overall platform roadmap. He leads product innovation, business strategy, and the long-term evolution of the platform.", initials: "BL", photo: "/img/team-benjamin-lean.jpg", linkedin: "https://www.linkedin.com/in/benjamin-lean", x: "", quote: "" },
+    { name: "Vishva Patel", role: "CTO & CISO", focus: "Engineering · Technology · Cybersecurity", line: "Vishva leads Tenvor's engineering, technology architecture, and cybersecurity strategy. He oversees technical development, infrastructure, platform security, and the delivery of scalable, secure, and enterprise-grade solutions.", initials: "VP", photo: "/img/team-vishva-patel.jpg", linkedin: "https://www.linkedin.com/in/vishva-vp", x: "", quote: "" },
   ] as Member[],
 };
