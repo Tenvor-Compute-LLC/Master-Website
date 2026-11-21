@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Btn, H2 } from "./ui";
+import { H2 } from "./ui";
 
 export default function Footer() {
   return (
@@ -20,11 +20,10 @@ export default function Footer() {
             </div>
           </div>
           <div className="foot__cols reveal">
-            <div><p className="mono">Sitemap</p><Link href="/">Home</Link><Link href="/#services">Products</Link><Link href="/#pricing">Pricing</Link><Link href="/docs">Docs</Link><Link href="/models">Models</Link><Link href="/#about">About</Link><Link href="/#journal">Guides</Link></div>
-            <div><p className="mono">Company</p><a href="mailto:support@tenvor.io">support@tenvor.io</a><Link href="/operators">Run a node</Link><Link href="/trust">Trust &amp; security</Link><Link href="/status">Status</Link><Link href="/contact">Contact</Link></div>
+            <div><p className="mono">Sitemap</p><Link href="/">Home</Link><Link href="/#services">Products</Link><Link href="/#pricing">Pricing</Link><Link href="/docs">Docs</Link><Link href="/models">Models</Link><Link href="/#about">About</Link><Link href="/#journal">Guides</Link><a href="https://tenvor.io/console">Get an API key</a></div>
+            <div><p className="mono">Company</p><a href="mailto:support@tenvor.io">support@tenvor.io</a><Link href="/operators">Run a node</Link><Link href="/trust">Trust &amp; security</Link><Link href="/status">Status</Link><Link href="/contact">Contact</Link>{/* TODO: real careers link from the owner */}<a href="#">Careers</a></div>
             <div><p className="mono">Legal</p><Link href="/legal/terms">Terms</Link><Link href="/legal/privacy">Privacy</Link><Link href="/legal/acceptable-use">Acceptable use</Link><Link href="/legal/cookies">Cookies</Link></div>
             <div><p className="mono">Social</p><a href="https://www.linkedin.com/company/tenvor-compute/" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
-            <div className="foot__cta"><Btn href="https://tenvor.io/console" variant="accent">Get an API key</Btn></div>
           </div>
         </div>
         <p className="wordmark" aria-hidden="true">Tenvor</p>
