@@ -147,7 +147,7 @@ export default function About() {
         <Head num={about.num} eyebrow={about.eyebrow} title={about.title} side={about.side} />
         <Eyebrow>{about.storyLabel}</Eyebrow>
         <Story />
-        <div className="split split--wide about__team">
+        <div className="about__team">
           <div className="reveal"><Eyebrow>{about.teamLabel}</Eyebrow><p className="lead">{about.teamLead}</p></div>
           <div className="about__people">
             {about.team.map(m => (
@@ -158,17 +158,19 @@ export default function About() {
                     {m.photo ? <img src={m.photo} alt={m.name} /> : <span aria-hidden="true">{m.initials}</span>}
                   </div>
                   <figcaption>
-                    <span className="about__role mono">{m.role}</span>
-                    <b className="about__name">{m.name}</b>
+                    <div className="about__top">
+                      <b className="about__name">{m.name}</b>
+                      {(m.linkedin || m.x) && (
+                        <div className="about__social">
+                          {m.linkedin && <a href={m.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`${m.name} on LinkedIn`}><Icon d={LI} /></a>}
+                          {m.x && <a href={m.x} target="_blank" rel="noopener noreferrer" aria-label={`${m.name} on X`}><Icon d={X} /></a>}
+                        </div>
+                      )}
+                    </div>
+                    <span className="about__role">{m.role}</span>
                     <span className="about__focus mono accent">{m.focus}</span>
                     <p>{m.line}</p>
                     {m.quote && <blockquote>“{m.quote}”</blockquote>}
-                    {(m.linkedin || m.x) && (
-                      <div className="about__social">
-                        {m.linkedin && <a href={m.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`${m.name} on LinkedIn`}><Icon d={LI} /></a>}
-                        {m.x && <a href={m.x} target="_blank" rel="noopener noreferrer" aria-label={`${m.name} on X`}><Icon d={X} /></a>}
-                      </div>
-                    )}
                   </figcaption>
                 </div>
               </figure>

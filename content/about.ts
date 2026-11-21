@@ -29,9 +29,9 @@ export const about = {
     { title: "The layer", body: "Tenvor is one orchestration layer that runs open models across distributed GPUs, each job in a sealed container, so anyone can start free with no card." },
   ] as StoryStep[],
   teamLabel: "The team",
-  teamLead: "Two founders. One mission: open models on the GPUs the world already has.",
+  teamLead: "The team behind Tenvor. One mission: open models on the GPUs the world already has.",
   team: [
-    { name: "Benjamin Lean", role: "Founder & Chief Executive Officer", focus: "Vision · Innovation · Strategy", line: "Benjamin is the original innovator behind the Tenvor concept, driving the company's vision, strategic direction, and overall platform roadmap. He leads product innovation, business strategy, and the long-term evolution of the platform.", initials: "BL", photo: "/img/team-benjamin-lean.jpg", linkedin: "https://www.linkedin.com/in/benjamin-lean", x: "", quote: "" },
-    { name: "Vishva Patel", role: "Chief Technology Officer & Chief Information Security Officer", focus: "Engineering · Technology · Cybersecurity", line: "Vishva leads Tenvor's engineering, technology architecture, and cybersecurity strategy. He oversees technical development, infrastructure, platform security, and the delivery of scalable, secure, and enterprise-grade solutions.", initials: "VP", photo: "/img/team-vishva-patel.jpg", linkedin: "https://www.linkedin.com/in/vishva-vp", x: "", quote: "" },
+    { name: "Benjamin Lean", role: "Founder & Chief Executive Officer", focus: "Vision · Innovation · Strategy", line: "The original innovator behind Tenvor. Leads the vision, strategy and platform roadmap.", initials: "BL", photo: "/img/team-benjamin-lean.jpg", linkedin: "https://www.linkedin.com/in/benjamin-lean", x: "", quote: "" },
+    { name: "Vishva Patel", role: "Chief Technology Officer & Chief Information Security Officer", focus: "Engineering · Technology · Cybersecurity", line: "Leads engineering, architecture and security, building a platform that is scalable and secure.", initials: "VP", photo: "/img/team-vishva-patel.jpg", linkedin: "https://www.linkedin.com/in/vishva-vp", x: "", quote: "" },
   ] as Member[],
 };
