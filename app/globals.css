@@ -359,7 +359,7 @@ ul,ol{list-style:none}
 .about__n{display:none}
 .about__team{margin-top:clamp(64px,8vw,112px)}
 .about__team .lead{max-width:560px}
-.about__people{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,3vw,40px);max-width:1120px;margin-top:clamp(28px,4vw,48px)}
+.about__people{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,3vw,40px);max-width:880px;margin-top:clamp(28px,4vw,48px)}
 .about__people figure{margin:0;min-width:0}
 .about__card{display:flex;flex-direction:column;gap:clamp(14px,1.6vw,22px)}
 .about__photo{position:relative;aspect-ratio:1;border-radius:clamp(14px,1.6vw,22px);overflow:hidden;display:grid;place-items:center;border:1px solid var(--line);background:linear-gradient(160deg,#1c1c21,#09090b);box-shadow:0 24px 60px -28px rgba(255,90,31,.45);transition:border-color .4s,box-shadow .4s}
