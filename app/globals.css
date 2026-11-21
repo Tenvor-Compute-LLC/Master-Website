@@ -358,13 +358,12 @@ ul,ol{list-style:none}
 .about__step p{color:var(--muted);font-size:clamp(17px,1.4vw,20px);max-width:440px}
 .about__n{display:none}
 .about__team{margin-top:clamp(64px,8vw,112px)}
-.about__people{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.about__card{position:relative;display:flex;flex-direction:column;height:100%;border-radius:22px;overflow:hidden;border:1px solid var(--line);background:#0e0e11;transition:transform .5s cubic-bezier(.22,1,.36,1),border-color .4s,box-shadow .4s}
+.about__people{display:grid;grid-template-columns:1fr;gap:16px}
+.about__card{position:relative;display:flex;align-items:flex-start;gap:clamp(18px,2vw,28px);padding:clamp(16px,1.6vw,22px);background:radial-gradient(60% 80% at 0% 0%,rgba(255,90,31,.10),transparent 70%),#0e0e11;border-radius:22px;overflow:hidden;border:1px solid var(--line);background:#0e0e11;transition:transform .5s cubic-bezier(.22,1,.36,1),border-color .4s,box-shadow .4s}
 .about__people figure{display:flex;margin:0}
 .about__people .about__card{flex:1}
-.about__people figure:nth-child(2) .about__card{--tilt:1.2deg}
-.about__card:hover{transform:perspective(900px) translateY(-8px) rotateY(var(--tilt,-1.2deg)) rotateX(1.5deg);border-color:rgba(255,90,31,.7);box-shadow:0 0 0 1px rgba(255,90,31,.35),0 24px 60px -12px rgba(255,90,31,.35)}
-.about__photo{position:relative;aspect-ratio:1;overflow:hidden;display:grid;place-items:center;padding-bottom:30%;background:radial-gradient(90% 60% at 80% 0%,rgba(255,90,31,.28),transparent 60%),radial-gradient(70% 50% at 0% 100%,rgba(255,90,31,.10),transparent 70%),linear-gradient(160deg,#1c1c21,#09090b);transition:transform .8s cubic-bezier(.22,1,.36,1)}
+.about__card:hover{transform:translateY(-4px);border-color:rgba(255,90,31,.7);box-shadow:0 0 0 1px rgba(255,90,31,.35),0 24px 60px -12px rgba(255,90,31,.35)}
+.about__photo{position:relative;flex:none;width:clamp(120px,12vw,160px);aspect-ratio:1;border-radius:14px;overflow:hidden;display:grid;place-items:center;padding-bottom:30%;background:radial-gradient(90% 60% at 80% 0%,rgba(255,90,31,.28),transparent 60%),radial-gradient(70% 50% at 0% 100%,rgba(255,90,31,.10),transparent 70%),linear-gradient(160deg,#1c1c21,#09090b);transition:transform .8s cubic-bezier(.22,1,.36,1)}
 .about__people figure:nth-child(2) .about__photo{background:radial-gradient(90% 60% at 10% 0%,rgba(255,90,31,.24),transparent 60%),radial-gradient(70% 50% at 100% 100%,rgba(255,90,31,.10),transparent 70%),linear-gradient(200deg,#1c1c21,#09090b)}
 /* grid lines and film noise over the placeholder, faded toward the edges */
 .about__photo::before,.about__photo::after{content:"";position:absolute;inset:0;pointer-events:none}
@@ -374,13 +373,13 @@ ul,ol{list-style:none}
 .about__photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .about__photo img{transition:transform .8s cubic-bezier(.22,1,.36,1)}
 .about__card:hover .about__photo img{transform:scale(1.05)}
-.about__photo:has(img){padding:0;box-shadow:inset 0 -1px 0 var(--line)}
+.about__photo:has(img){padding:0;box-shadow:0 0 0 1px var(--line),0 12px 32px -12px rgba(255,90,31,.45)}
 .about__photo:has(img)::before{display:none}
-.about__card figcaption{flex:1;display:flex;flex-direction:column;align-items:flex-start;gap:10px;padding:clamp(18px,2vw,28px);background:radial-gradient(80% 60% at 50% 0%,rgba(255,90,31,.10),transparent 70%)}
+.about__card figcaption{flex:1;min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:8px}
 .about__focus{font-size:11px;letter-spacing:.06em;text-transform:uppercase;line-height:1.5}
 .about__role{color:#1a0d06;background:var(--accent);border-radius:6px;padding:4px 9px;font-size:11px}
-.about__name{font:500 clamp(28px,2.6vw,40px)/1.02 var(--display);letter-spacing:-.03em}
-.about__card p{color:var(--muted);font-size:15px;line-height:1.5}
+.about__name{font:500 clamp(24px,2vw,30px)/1.02 var(--display);letter-spacing:-.03em}
+.about__card p{color:var(--muted);font-size:14px;line-height:1.55}
 .about__card blockquote{font-size:15px;color:var(--text);border-left:2px solid var(--accent);padding-left:12px}
 .about__social{display:flex;gap:8px;margin-top:4px}
 .about__social a{display:grid;place-items:center;width:36px;height:36px;border-radius:9px;border:1px solid #38383d;background:rgba(242,241,236,.04);transition:background .3s,color .3s,border-color .3s}
@@ -398,7 +397,7 @@ ul,ol{list-style:none}
   .about__step.on .about__n{color:var(--accent)}
   .about__people{max-width:760px}
 }
-@media (max-width:600px){.about__people{grid-template-columns:1fr;max-width:420px;gap:16px}}
+@media (max-width:600px){.about__card{flex-direction:column}.about__photo{width:120px}}
 /* reduced motion: map fully lit (JS), no dimming or swapping: every step shows its own number */
 @media (prefers-reduced-motion:reduce){.about__step{opacity:1;min-height:0;padding:28px 0}.about__big{display:none}.about__n{display:block;font:500 56px/.9 var(--display);color:var(--accent)}.about__steps{justify-content:center}.about__card:hover,.about__card:hover .about__photo img{transform:none}}
 
