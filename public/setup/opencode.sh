@@ -24,7 +24,7 @@ trap 'exit 130' HUP INT TERM
 curl -q --proto '=https' --tlsv1.2 --fail --silent --show-error \
   --max-time 30 --max-filesize 1048576 \
   "$tenvor_helper_url" --output "$tenvor_setup_dir/opencode.py"
-python3 - "$tenvor_setup_dir/opencode.py" "$tenvor_helper_sha256" <<'PY'
+python3 -I - "$tenvor_setup_dir/opencode.py" "$tenvor_helper_sha256" <<'PY'
 import hashlib
 import sys
 

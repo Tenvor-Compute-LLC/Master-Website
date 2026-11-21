@@ -8,7 +8,7 @@ const plans = {
   max: { name: "Max", price: "$19", week: "$5.75", tokens: "41.9M", month: "$23.00", msgs: "900", more: "21%" },
 };
 export type PlanId = keyof typeof plans;
-export const isPlan = (p: unknown): p is PlanId => typeof p === "string" && p in plans;
+export const isPlan = (p: unknown): p is PlanId => typeof p === "string" && Object.hasOwn(plans, p);
 
 const console_ = "https://tenvor.io/console";
 
