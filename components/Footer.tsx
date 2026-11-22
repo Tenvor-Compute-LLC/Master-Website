@@ -16,7 +16,7 @@ export default function Footer() {
                 <img src="/img/pay/discover.svg" alt="Discover" width={44} height={28} />
                 <img src="/img/pay/amex.svg" alt="American Express" width={44} height={28} />
               </div>
-              <p>Card payments are processed by Authorize.net. Tenvor never sees or stores your card number.</p>
+              <p>Card payments are processed securely by Stripe. Tenvor never sees or stores your card number.</p>
             </div>
           </div>
           <div className="foot__cols reveal">

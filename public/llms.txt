@@ -1,0 +1,37 @@
+# Tenvor
+
+> Tenvor is an open-model cloud: one OpenAI-compatible API for open models, served by GPUs in PCs around the world. Each request runs in a sealed container (no network, rootless, read-only model files). Pay per token; every new account gets $0.25 of free credit, no card needed. Operated by Tenvor Compute LLC.
+
+- API: OpenAI-compatible. Change only the base URL and the key; the OpenAI SDKs, curl, JetBrains AI Assistant, OpenCode and Pi work.
+- Model today: Qwen 3.6 35B (`chat-35b-moe`), 64K context, tool calls, reasoning and streaming.
+- Pricing: $0.126 per million input tokens, $0.063 cached input, $0.81 per million output tokens. Failed requests are never billed. Monthly plans: Lite $6, Plus $12.50, Max $19.
+- Data: requests are never logged or kept; a request's files are erased when it finishes. The node operator can read the prompt, so keep sensitive data out during the alpha.
+- Operators: anyone invited can run a node on an NVIDIA GPU with 10 GB+ of video memory (Windows 11 or Linux).
+- Contact: support@tenvor.io. Security reports: security@tenvor.io.
+
+## Docs
+
+- [Documentation](https://tenvor.io/docs): from a new account to a first reply and its receipt
+- [Quickstart](https://tenvor.io/docs/quickstart): your first request
+- [Chat Completions API](https://tenvor.io/docs/api/chat-completions): request and response reference
+- [Models and limits](https://tenvor.io/docs/models-and-limits): models, context window, limits
+- [Billing and receipts](https://tenvor.io/docs/billing): what you pay for each request
+- [Troubleshooting](https://tenvor.io/docs/troubleshooting)
+- Integrations: [OpenCode](https://tenvor.io/docs/integrations/opencode), [Pi](https://tenvor.io/docs/integrations/pi), [JetBrains AI Assistant](https://tenvor.io/docs/integrations/jetbrains)
+
+## Product
+
+- [Pricing](https://tenvor.io/pricing)
+- [Models](https://tenvor.io/models)
+- [Build with Tenvor](https://tenvor.io/developers)
+- [Chat & Work](https://tenvor.io/chat)
+- [Run a node](https://tenvor.io/operators)
+- [Trust center](https://tenvor.io/trust): security controls and scope
+- [Status](https://tenvor.io/status)
+
+## Legal
+
+- [Terms of Service](https://tenvor.io/legal/terms)
+- [Privacy Policy](https://tenvor.io/legal/privacy)
+- [Acceptable Use Policy](https://tenvor.io/legal/acceptable-use)
+- [Security Policy](https://tenvor.io/legal/security)

@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import SitePageView from "@/components/SitePage";
 import { checkoutPage, isPlan } from "@/content/pages/checkout";
 
-export const metadata: Metadata = { title: "Checkout | Tenvor" };
+export const metadata: Metadata = { title: "Checkout | Tenvor", robots: { index: false, follow: true }, alternates: { canonical: "/checkout" } };
 
 type Props = { searchParams: Promise<{ plan?: string | string[] }> };
 

@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { pageMeta } from "@/lib/seo";
 import DocShell from "@/components/DocShell";
 import { Arrow, Eyebrow, H2 } from "@/components/ui";
 import { alpha, docsHead, glance, glanceNote, how, integrations, next, reference, reviewNote, start, toc, works, type DocCard, type Rich } from "@/content/docs";
 
-export const metadata: Metadata = { title: "Docs | Tenvor" };
+export const metadata: Metadata = pageMeta("Docs | Tenvor", "/docs", docsHead.intro);
 
 const ext = (h: string) => h.startsWith("http") ? { target: "_blank", rel: "noopener" } : {};
 const A = ({ href, children, className }: { href: string; children: React.ReactNode; className?: string }) =>

@@ -50,11 +50,11 @@ export function checkoutPage(id: PlanId): SitePage {
 <p><b>Alpha money-back guarantee.</b> If you are not satisfied, ask for a refund of the unused part of this month's plan, returned to the card you paid with. <a href="/legal/service-credits">Details</a></p>
 </section>
 <section class="s-card" aria-labelledby="ck-pay"><h2 id="ck-pay">Payment</h2>
-<p><b>Card payments are not open yet.</b> When they are, you pay here, on Authorize.net's secure payment form, and your plan starts as soon as the payment is confirmed.</p>
+<p><b>Card payments are not open yet.</b> When they are, you pay here, on Stripe's secure payment form, and your plan starts as soon as the payment is confirmed.</p>
 <div class="s-row"><a class="s-btn s-btn--accent" href="${console_}">Sign up</a><a class="s-btn" href="${console_}">Sign in</a></div>
 <p><a href="/pricing">Back to the plans</a></p>
 <p class="s-k">We accept</p>
-<small>Card payments are processed by Authorize.net. You enter your card details on Authorize.net's secure payment form, and Tenvor never sees or stores your card number. Visa, Mastercard, Discover and American Express are accepted.</small>
+<small>Card payments are processed by Stripe. You enter your card details on Stripe's secure payment form, and Tenvor never sees or stores your card number. Visa, Mastercard, Discover and American Express are accepted.</small>
 </section>
 </div>`,
   };

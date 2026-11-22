@@ -6,12 +6,22 @@ import { flowLogs, flowSteps } from "@/content/hero";
 function drawWires(f: HTMLElement | null, w: SVGSVGElement | null) {
   if (!f || !w || getComputedStyle(w).display === "none") return;
   const fr = f.getBoundingClientRect(), a = f.querySelector(".agent")!.getBoundingClientRect();
-  w.innerHTML = [...f.querySelectorAll<HTMLElement>("[data-wire]")].map((n, i) => {
-    const r = n.getBoundingClientRect(), ay = a.top + a.height * (0.35 + (i % 3) * 0.15) - fr.top;
-    const out = n.dataset.wire === "out";
-    const x1 = (out ? a.right : r.right) - fr.left, y1 = out ? ay : r.top + r.height / 2 - fr.top;
-    const x2 = (out ? r.left : a.left) - fr.left, y2 = out ? r.top + r.height / 2 - fr.top : ay, mx = (x1 + x2) / 2;
-    const d = `M${x1},${y1} C${mx},${y1} ${mx},${y2} ${x2},${y2}`;
+  const nodes = [...f.querySelectorAll<HTMLElement>("[data-wire]")];
+  // phone/tablet: columns stack above and below the agent, so the wires run vertically
+  const vertical = nodes[0].getBoundingClientRect().bottom <= a.top;
+  w.innerHTML = nodes.map((n, i) => {
+    const r = n.getBoundingClientRect(), out = n.dataset.wire === "out";
+    let d: string;
+    if (vertical) {
+      const ax = a.left + a.width * (0.3 + (i % 3) * 0.2) - fr.left, nx = r.left + r.width / 2 - fr.left;
+      const [x1, y1, x2, y2] = out ? [ax, a.bottom - fr.top, nx, r.top - fr.top] : [nx, r.bottom - fr.top, ax, a.top - fr.top], my = (y1 + y2) / 2;
+      d = `M${x1},${y1} C${x1},${my} ${x2},${my} ${x2},${y2}`;
+    } else {
+      const ay = a.top + a.height * (0.35 + (i % 3) * 0.15) - fr.top;
+      const x1 = (out ? a.right : r.right) - fr.left, y1 = out ? ay : r.top + r.height / 2 - fr.top;
+      const x2 = (out ? r.left : a.left) - fr.left, y2 = out ? r.top + r.height / 2 - fr.top : ay, mx = (x1 + x2) / 2;
+      d = `M${x1},${y1} C${mx},${y1} ${mx},${y2} ${x2},${y2}`;
+    }
     return `<path d="${d}"/>` + (n.classList.contains("node--hot") ? `<path class="hot" d="${d}"/>` : "");
   }).join("");
 }

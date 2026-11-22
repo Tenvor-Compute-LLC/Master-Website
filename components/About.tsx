@@ -1,4 +1,5 @@
 "use client";
+import type React from "react";
 import { useEffect, useRef, useState } from "react";
 import { about } from "@/content/about";
 import Head from "./Head";
@@ -140,6 +141,13 @@ const Icon = ({ d }: { d: string }) => <svg viewBox="0 0 24 24" aria-hidden="tru
 const LI = "M4.98 3.5a2.49 2.49 0 1 1-4.98 0 2.49 2.49 0 0 1 4.98 0ZM.22 8h4.56v14H.22V8Zm7.5 0h4.37v1.92h.06c.61-1.15 2.1-2.36 4.33-2.36 4.63 0 5.48 3.05 5.48 7.01V22h-4.56v-6.6c0-1.57-.03-3.6-2.2-3.6-2.2 0-2.53 1.72-2.53 3.49V22H7.72V8Z";
 const X = "M18.24 2.25h3.31l-7.23 8.26 8.5 11.24h-6.65l-5.21-6.82-5.97 6.82H1.68l7.73-8.84L1.25 2.25h6.83l4.71 6.23 5.45-6.23Zm-1.16 17.52h1.83L7.08 4.13H5.12l11.96 15.64Z";
 
+// Card spotlight: follows the pointer via CSS variables (no re-render).
+const spot = (e: React.PointerEvent<HTMLDivElement>) => {
+  const r = e.currentTarget.getBoundingClientRect();
+  e.currentTarget.style.setProperty("--x", `${e.clientX - r.left}px`);
+  e.currentTarget.style.setProperty("--y", `${e.clientY - r.top}px`);
+};
+
 export default function About() {
   return (
     <section className="sec" id="about">
@@ -150,27 +158,31 @@ export default function About() {
         <div className="about__team">
           <div className="reveal"><Eyebrow>{about.teamLabel}</Eyebrow><p className="lead">{about.teamLead}</p></div>
           <div className="about__people">
-            {about.team.map(m => (
-              <figure className="reveal" key={m.name}>
-                <div className="about__card">
+            {about.team.map((m, i) => (
+              <figure className="reveal" key={m.name} style={{ "--d": i } as React.CSSProperties}>
+                <div className="about__card" onPointerMove={spot}>
+                  <span className="about__glow" aria-hidden="true" />
+                  <span className="about__idx mono" aria-hidden="true">{String(i + 1).padStart(2, "0")}</span>
                   {/* Photo: set `photo` in content/about.ts to a path under /public; until then the initials stand in. */}
-                  <div className="about__photo">
-                    {m.photo ? <img src={m.photo} alt={m.name} /> : <span aria-hidden="true">{m.initials}</span>}
+                  <div className="about__ring">
+                    <div className="about__photo">
+                      {m.photo ? <img src={m.photo} alt={m.name} /> : <span aria-hidden="true">{m.initials}</span>}
+                    </div>
+                  </div>
+                  <div className="about__head">
+                    <b className="about__name">{m.name}</b>
+                    <span className="about__role">{m.role}</span>
                   </div>
                   <figcaption>
-                    <div className="about__top">
-                      <b className="about__name">{m.name}</b>
-                      {(m.linkedin || m.x) && (
-                        <div className="about__social">
-                          {m.linkedin && <a href={m.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`${m.name} on LinkedIn`}><Icon d={LI} /></a>}
-                          {m.x && <a href={m.x} target="_blank" rel="noopener noreferrer" aria-label={`${m.name} on X`}><Icon d={X} /></a>}
-                        </div>
-                      )}
-                    </div>
-                    <span className="about__role">{m.role}</span>
-                    <span className="about__focus mono accent">{m.focus}</span>
+                    <ul className="about__tags" aria-label="Focus">{m.focus.split(" · ").map((t, k) => <li key={t} style={{ "--i": k } as React.CSSProperties}>{t}</li>)}</ul>
                     <p>{m.line}</p>
                     {m.quote && <blockquote>“{m.quote}”</blockquote>}
+                    {(m.linkedin || m.x) && (
+                      <div className="about__social">
+                        {m.linkedin && <a href={m.linkedin} target="_blank" rel="noopener noreferrer" aria-label={`${m.name} on LinkedIn`}><Icon d={LI} /></a>}
+                        {m.x && <a href={m.x} target="_blank" rel="noopener noreferrer" aria-label={`${m.name} on X`}><Icon d={X} /></a>}
+                      </div>
+                    )}
                   </figcaption>
                 </div>
               </figure>

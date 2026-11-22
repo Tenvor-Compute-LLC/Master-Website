@@ -16,11 +16,10 @@ export default function LogoMarquee() {
   const rate = (r: number) => track.current?.getAnimations().forEach(a => { a.playbackRate = r; });
   return (
     <div className="wrap logos">
-      <p className="mono logos__label">Qwen 3.6 35B is live. Works with</p>
+      <p className="mono logos__label">Ecosystem</p>
       <div className="marquee">
         <div className="marquee__track" ref={track} onMouseEnter={() => rate(0.4)} onMouseLeave={() => rate(1)}>
-          {clients.map(c => <span key={c}>{c}</span>)}
-          {clients.map(c => <span key={c + "-2"} aria-hidden="true">{c}</span>)}
+          {[0, 1].map(k => clients.map(c => <span key={c.name + k} aria-hidden={k ? true : undefined}>{c.logo && <img src={c.logo} alt="" />}{c.name}</span>))}
         </div>
       </div>
     </div>
