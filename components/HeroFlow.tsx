@@ -63,7 +63,7 @@ export default function HeroFlow() {
           {node("in", 2, <><rect x="3" y="4" width="18" height="16" rx="2" /><path d="M3 9h18M6.5 6.5h.01M9 6.5h.01" /></>, "Web console", "Chat · Qwen 3.6 35B")}
         </div>
         <div className="agent">
-          <div className="agent__top"><span className="agent__ico"><svg viewBox="0 0 24 24"><path d="M6 10v4M10 7v10M14 9v6M18 11v2" /></svg></span><b>Tenvor Orchestrator</b><span className="mono live"><i className="dot"></i>Running</span></div>
+          <div className="agent__top"><span className="agent__ico"><img src="/img/logo-t.svg" alt="" /></span><b>Tenvor Orchestrator</b><span className="mono live"><i className="dot"></i>Running</span></div>
           <p className="mono agent__log"><span className="accent">→</span>{" " + flowSteps[tick % 5]}</p>
           <div className="bar"><span></span></div>
           <div className="tags mono"><span>Routing</span><span>Scheduler</span><span>Sandbox</span><span>Metering</span></div>
