@@ -41,7 +41,7 @@ export async function POST(req: Request) {
     body: JSON.stringify({
       from: process.env.CONTACT_FROM ?? "Tenvor website <contact@tenvor.io>",
       to: [c.to], reply_to: c.email,
-      subject: `[${c.topicLabel}] ${c.name}${c.accountId ? ` (${c.accountId})` : ""}`,
+      subject: `Website form submission: ${c.topicLabel} from ${c.name}${c.accountId ? ` (${c.accountId})` : ""}`,
       text,
     }),
   }).catch(() => null);

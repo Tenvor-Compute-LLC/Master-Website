@@ -1,15 +1,15 @@
-// Contact form: topics, routing and validation, shared by the form and the API route.
+// Contact form: topics and validation; every submission is emailed to support@tenvor.io, shared by the form and the API route.
 
 export const topics = [
-  { id: "general", label: "General inquiry", to: "support@tenvor.io" },
-  { id: "support", label: "Technical support", to: "support@tenvor.io" },
-  { id: "account", label: "Account & API keys", to: "support@tenvor.io" },
-  { id: "billing", label: "Billing, plans & refunds", to: "billing@tenvor.io" },
-  { id: "sales", label: "Sales & enterprise", to: "support@tenvor.io" },
-  { id: "operators", label: "Run a node (operators)", to: "support@tenvor.io" },
-  { id: "partners", label: "Partnerships & press", to: "support@tenvor.io" },
-  { id: "privacy", label: "Privacy request", to: "privacy@tenvor.io" },
-  { id: "security", label: "Security report", to: "security@tenvor.io" },
+  { id: "general", label: "General inquiry" },
+  { id: "support", label: "Technical support" },
+  { id: "account", label: "Account & API keys" },
+  { id: "billing", label: "Billing, plans & refunds" },
+  { id: "sales", label: "Sales & enterprise" },
+  { id: "operators", label: "Run a node (operators)" },
+  { id: "partners", label: "Partnerships & press" },
+  { id: "privacy", label: "Privacy request" },
+  { id: "security", label: "Security report" },
 ] as const;
 
 export type ContactInput = {
@@ -52,5 +52,5 @@ export function validate(raw: Partial<Record<keyof ContactInput, unknown>>): { o
   if (raw.consent !== true && raw.consent !== "on" && raw.consent !== "true") errors.consent = "Please agree so we can reply.";
   if (Object.keys(errors).length || !topic) return { ok: false, errors };
   const { website: _, ...rest } = v;
-  return { ok: true, contact: { ...rest, to: topic.to, topicLabel: topic.label } };
+  return { ok: true, contact: { ...rest, to: "support@tenvor.io", topicLabel: topic.label } };
 }
