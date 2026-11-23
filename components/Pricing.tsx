@@ -1,7 +1,9 @@
 "use client";
 import { useRef, useState, type KeyboardEvent } from "react";
 import { charging, compare, contactHref, example, pricingTabs, rates } from "@/content/pricing";
+import "@/app/styles/anim-docs.css";
 import Head from "./Head";
+import PriceReceipt from "./PriceReceipt";
 import { Btn } from "./ui";
 
 export default function Pricing() {
@@ -70,6 +72,7 @@ export default function Pricing() {
             </div>
           </div>
         )}
+        <PriceReceipt />
         <p className="mono ptabs__note">Teams &amp; Enterprise? <a href={contactHref}>Contact us →</a></p>
       </div>
     </section>

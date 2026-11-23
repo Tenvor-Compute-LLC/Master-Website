@@ -1,0 +1,22 @@
+/* anim-docs: code blocks type in once; the request/response card beside the docs heading */
+.docs__body pre.dt-arm .d-l{opacity:0}
+.docs__body pre.dt-go .d-l{animation:dt-line .3s ease both;animation-delay:calc(var(--i,0) * 45ms)}
+@keyframes dt-line{from{opacity:0}to{opacity:1}}
+.dflow .tf__list{gap:14px}
+.dflow__reply{min-height:1.4em}
+@media (prefers-reduced-motion: reduce){.docs__body pre.dt-arm .d-l{opacity:1;animation:none}}
+/* products: stats count up once */
+.stats b{font-variant-numeric:tabular-nums}
+/* pricing: the example request itemised like a receipt */
+.prc{margin-top:28px;border:1px solid var(--line);border-radius:16px;background:var(--card);padding:18px 20px}
+.prc__k,.prc__note{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin:0}
+.prc__note{text-transform:none;letter-spacing:0;margin-top:12px}
+.prc__rows{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.prc__rows li{display:grid;gap:6px;font-size:12px;color:var(--muted);opacity:.35;transition:opacity .3s}
+.prc__rows li.on{opacity:1}
+.prc__rows b{font-weight:400;font-size:18px;color:var(--text);font-variant-numeric:tabular-nums}
+.prc__rows li.prc__sum b{color:var(--accent)}
+@media (max-width:700px){.prc__rows{grid-template-columns:1fr 1fr}}
+/* docs head with the request card beside it: the title shares the row, so it steps down a size */
+.docs__head.split:has(.dflow) .display{font-size:clamp(40px,5.6vw,80px);overflow-wrap:break-word}
+.docs__head.split:has(.dflow) .btns{margin-top:32px}
