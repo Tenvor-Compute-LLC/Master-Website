@@ -27,7 +27,7 @@ export default function FAQ() {
     <section className="sec">
       <div className="wrap split split--faq">
         <div className="reveal">
-          <Eyebrow num="03">FAQ</Eyebrow>
+          <Eyebrow num="02">FAQ</Eyebrow>
           <H2>Questions, answered.</H2>
           <p className="lead">Not answered here? The Trust page lists every known limit of the alpha, or write to support@tenvor.io.</p>
           <Btn href="mailto:support@tenvor.io" variant="ghost">Ask us anything</Btn>

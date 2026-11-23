@@ -1,6 +1,6 @@
 "use client";
 import { useRef, useState, type KeyboardEvent } from "react";
-import { contactHref, pricingTabs } from "@/content/pricing";
+import { charging, compare, contactHref, example, pricingTabs, rates } from "@/content/pricing";
 import Head from "./Head";
 import { Btn } from "./ui";
 
@@ -42,6 +42,34 @@ export default function Pricing() {
             </div>
           ))}
         </div>
+        {cur.id === "monthly" ? (
+          <details className="pmore">
+            <summary className="mono">Compare plans</summary>
+            <div className="d-tbl"><table>
+              <thead><tr><th></th>{compare.head.map(h => <th key={h}>{h}</th>)}</tr></thead>
+              <tbody>
+                {compare.rows.map(([k, ...v]) => <tr key={k}><th scope="row">{k}</th>{v.map((x, i) => <td key={i}>{x}</td>)}</tr>)}
+                {compare.wide.map(([k, v]) => <tr key={k}><th scope="row">{k}</th><td colSpan={3}>{v}{k === "Money-back guarantee" && <> <a href="/legal/service-credits">Refund policy</a>.</>}</td></tr>)}
+              </tbody>
+            </table></div>
+            <p className="pmore__note">{compare.note}</p>
+          </details>
+        ) : (
+          <div className="pmore pmore--open">
+            <div className="d-tbl"><table>
+              <caption>Price per 1M tokens</caption>
+              <thead><tr><th>Model</th><th>Context</th><th>Input</th><th>Cached input</th><th>Output</th></tr></thead>
+              <tbody><tr><th scope="row">{rates.model} <code>{rates.id}</code></th><td>{rates.context}</td><td>{rates.input}</td><td>{rates.cached}</td><td>{rates.output}</td></tr></tbody>
+            </table></div>
+            <div className="pmore__cols">
+              <div><h3 className="mono">How a request is charged</h3><ul>{charging.map(c => <li key={c}>{c}</li>)}</ul></div>
+              <div><h3 className="mono">Example request</h3>
+                <div className="d-tbl"><table><tbody>{example.rows.map(([k, v]) => <tr key={k}><th scope="row">{k}</th><td>{v}</td></tr>)}</tbody></table></div>
+                <p className="pmore__note">{example.note}</p>
+              </div>
+            </div>
+          </div>
+        )}
         <p className="mono ptabs__note">Teams &amp; Enterprise? <a href={contactHref}>Contact us →</a></p>
       </div>
     </section>

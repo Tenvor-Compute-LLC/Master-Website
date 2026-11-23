@@ -933,3 +933,21 @@ a.tc-card:hover{border-color:rgba(255,90,31,.5);transform:translateY(-2px)}
   .nav__links .nav__drop a.cur{color:var(--accent)}
 }
 @media (prefers-reduced-motion:reduce){.nav__drop,.nav__grp>button i{transition:none}}
+
+/* pricing: the detail under each tab (existing table + note styles) */
+.pmore{margin-top:24px}
+.pmore>summary{display:inline-flex;align-items:center;gap:10px;cursor:pointer;color:var(--text);list-style:none;padding:10px 0}
+.pmore>summary::-webkit-details-marker{display:none}
+.pmore>summary::after{content:"+";color:var(--accent);font-size:16px}
+.pmore[open]>summary::after{content:"−"}
+.pmore .d-tbl{margin-top:12px}
+.pmore th[scope=row]{font-weight:500;color:var(--text)}
+.pmore td a{color:var(--text);border-bottom:1px solid var(--accent)}
+.pmore__note{color:var(--muted);font-size:14px;margin-top:14px;max-width:760px}
+.pmore__cols{display:grid;grid-template-columns:1.4fr 1fr;gap:32px;margin-top:28px}
+.pmore__cols h3{color:#bdbdc0;font-weight:400;margin-bottom:12px}
+.pmore__cols li{color:var(--muted);padding:6px 0 6px 18px;position:relative;font-size:15px}
+.pmore__cols li::before{content:"";position:absolute;left:0;top:15px;width:6px;height:6px;background:var(--accent);border-radius:1px}
+.pmore__cols .d-tbl table{min-width:0}
+.pmore code{font:12px var(--mono);color:var(--muted);margin-left:6px}
+@media (max-width:900px){.pmore__cols{grid-template-columns:1fr}}
