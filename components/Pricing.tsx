@@ -22,7 +22,7 @@ export default function Pricing() {
   return (
     <section className="sec" id="pricing">
       <div className="wrap">
-        <Head num="09" eyebrow="Pricing" title="Pay monthly or per token." side="Pick a monthly plan, or pay as you go. New accounts start with $0.25 of free credit; failed requests cost $0." />
+        <Head num="01" h1 eyebrow="Pricing" title="Pay monthly or per token." side="Pick a monthly plan, or pay as you go. New accounts start with $0.25 of free credit; failed requests cost $0." />
         <div className="ptabs mono" role="tablist" aria-label="Pricing options" onKeyDown={onKey}>
           {pricingTabs.map((t, i) => (
             <button key={t.id} ref={el => { tabRefs.current[i] = el; }} type="button" role="tab" id={`ptab-${t.id}`}

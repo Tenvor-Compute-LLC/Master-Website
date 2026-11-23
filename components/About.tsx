@@ -152,7 +152,7 @@ export default function About() {
   return (
     <section className="sec" id="about">
       <div className="wrap">
-        <Head num={about.num} eyebrow={about.eyebrow} title={about.title} side={about.side} />
+        <Head h1 num={about.num} eyebrow={about.eyebrow} title={about.title} side={about.side} />
         <Eyebrow>{about.storyLabel}</Eyebrow>
         <Story />
         <div className="about__team">

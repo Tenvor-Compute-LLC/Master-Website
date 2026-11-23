@@ -45,6 +45,7 @@ export function Words({ children }: { children: ReactNode }) {
 }
 
 /** Section h2 with the word-by-word reveal. */
-export function H2({ wide, children }: { wide?: boolean; children: string }) {
-  return <h2 className={`h2${wide ? " h2--wide" : ""}`}><Words>{children}</Words></h2>;
+export function H2({ wide, h1, children }: { wide?: boolean; h1?: boolean; children: string }) {
+  const Tag = h1 ? "h1" : "h2";
+  return <Tag className={`h2${wide ? " h2--wide" : ""}`}><Words>{children}</Words></Tag>;
 }

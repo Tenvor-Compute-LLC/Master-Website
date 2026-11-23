@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { Btn } from "./ui";
 
-const links = [["/#services", "Products"], ["/#pricing", "Pricing"], ["/docs", "Docs"], ["/operators", "Run a node"], ["/#about", "About"]];
+const links = [["/products", "Products"], ["/pricing", "Pricing"], ["/docs", "Docs"], ["/operators", "Run a node"], ["/about", "About"]];
 const ext = (h: string) => h.startsWith("http") ? { target: "_blank", rel: "noopener" } : {};
 
 export default function Nav() {

@@ -7,7 +7,7 @@ export default function Process() {
   return (
     <section className="sec">
       <div className="wrap">
-        <Head num="03" eyebrow="How it works" title="From sign-up to first reply in four steps." wide
+        <Head num="02" eyebrow="How it works" title="From sign-up to first reply in four steps." wide
           side="Keep the OpenAI SDK you already use. Change one URL, and every reply comes back with an itemised receipt." />
         <ol className="steps reveal">
           {steps.map((s, i) => (

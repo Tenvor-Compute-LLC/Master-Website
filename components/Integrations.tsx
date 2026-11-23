@@ -7,7 +7,7 @@ export default function Integrations() {
     <section className="sec">
       <div className="wrap split split--wide">
         <div className="reveal">
-          <Eyebrow num="04">Integrations</Eyebrow>
+          <Eyebrow num="03">Integrations</Eyebrow>
           <H2>Works with the tools you already use.</H2>
           <p className="lead">One OpenAI-compatible API. Point your SDK, agent framework, editor or chat app at Tenvor by changing the base URL and key. No code rewrite.</p>
           <p className="mono small">OpenAI-compatible · Streaming · Function tools</p>

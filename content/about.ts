@@ -18,7 +18,7 @@ export type Member = {
 };
 
 export const about = {
-  num: "07",
+  num: "01",
   eyebrow: "About",
   title: "Open models, on the GPUs the world already has.",
   side: "Why we are building Tenvor, and the people building it.",

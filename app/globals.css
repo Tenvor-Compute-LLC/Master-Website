@@ -903,3 +903,10 @@ a.tc-card:hover{border-color:rgba(255,90,31,.5);transform:translateY(-2px)}
   .ucmap .lanes .flow,.ucmap .led,.ucmap .hub-spin{animation:none}
   .js .ucmap .drop{opacity:1;transform:none;transition:none}
 }
+
+/* sub pages built from home sections: first section clears the fixed nav */
+.subpage>.sec:first-child{border-top:0;padding-top:calc(72px + clamp(32px,4vw,64px))}
+.site__lead{color:var(--muted);max-width:720px;margin:-8px 0 32px}
+.band__in{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end}
+.band__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+@media (max-width:900px){.band__in{grid-template-columns:1fr;gap:8px}}

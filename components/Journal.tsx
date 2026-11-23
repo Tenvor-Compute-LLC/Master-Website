@@ -6,7 +6,7 @@ export default function Journal() {
   return (
     <section className="sec" id="journal">
       <div className="wrap">
-        <Head num="11" eyebrow="Guides" title="From a new key to your first reply."
+        <Head num="02" eyebrow="Guides" title="From a new key to your first reply."
           side="Step-by-step guides from the Tenvor docs. Start free, no card needed."
           cta={{ href: "/docs", label: "Read the docs" }} />
         <div className="grid3">

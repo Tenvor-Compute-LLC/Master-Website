@@ -20,7 +20,7 @@ export default function Footer() {
             </div>
           </div>
           <div className="foot__cols reveal">
-            <div><p className="mono">Sitemap</p><Link href="/">Home</Link><Link href="/#services">Products</Link><Link href="/#pricing">Pricing</Link><Link href="/docs">Docs</Link><Link href="/models">Models</Link><Link href="/#about">About</Link><Link href="/#journal">Guides</Link><a href="https://tenvor.io/console">Get an API key</a></div>
+            <div><p className="mono">Sitemap</p><Link href="/">Home</Link><Link href="/products">Products</Link><Link href="/pricing">Pricing</Link><Link href="/docs">Docs</Link><Link href="/models">Models</Link><Link href="/about">About</Link><Link href="/about#journal">Guides</Link><a href="https://tenvor.io/console">Get an API key</a></div>
             <div><p className="mono">Company</p><a href="mailto:support@tenvor.io">support@tenvor.io</a><Link href="/operators">Run a node</Link><Link href="/trust">Trust &amp; security</Link><Link href="/status">Status</Link><Link href="/contact">Contact</Link><a href="https://binary.so/tenvor" target="_blank" rel="noopener noreferrer">Careers</a></div>
             <div><p className="mono">Legal</p><Link href="/legal/terms">Terms</Link><Link href="/legal/privacy">Privacy</Link><Link href="/legal/acceptable-use">Acceptable use</Link><Link href="/legal/cookies">Cookies</Link></div>
             <div><p className="mono">Social</p><a href="https://www.linkedin.com/company/tenvor-compute/" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
