@@ -4,9 +4,9 @@ import PageEffects from "@/components/PageEffects";
 import Head from "@/components/Head";
 import ModelRoster from "@/components/ModelRoster";
 import Globe from "@/components/Globe";
-import { Btn, Eyebrow, H2 } from "@/components/ui";
+import { Arrow, Btn, Eyebrow, H2 } from "@/components/ui";
 import { pageMeta } from "@/lib/seo";
-import { head, live, next, roadmap, use } from "@/content/models";
+import { abliterated, head, live, next, roadmap, use } from "@/content/models";
 
 export const metadata: Metadata = pageMeta("Models | Tenvor", "/models", head.intro);
 
@@ -77,6 +77,11 @@ export default function Page() {
               </table>
             </div>
             <p className="mono rm__key">Bars to scale · solid part is active for each token</p>
+            <div className="plan rm__soon reveal">
+              <span className="tag mono">{abliterated.label}</span>
+              <div><h4>{abliterated.title}</h4><p>{abliterated.text}</p></div>
+              <a href="/legal/acceptable-use" className="link">Acceptable use <Arrow className="accent" /></a>
+            </div>
           </div>
         </section>
 

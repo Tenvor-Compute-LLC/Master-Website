@@ -53,3 +53,10 @@ export const roadmap = {
     { name: "Kimi K2", maker: "Moonshot AI", total: 1000, active: 32, size: "1T · 32B active" },
   ],
 };
+
+/** Owner asked to announce this (2026-11-22). Not from tenvor.io. */
+export const abliterated = {
+  label: "Coming soon",
+  title: "Abliterated models",
+  text: "Open models with their built-in refusals removed, served through the same API. Use is still covered by the Acceptable use policy.",
+};
