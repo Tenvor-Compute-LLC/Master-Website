@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import SitePageView from "@/components/SitePage";
-import { checkoutPage, isPlan } from "@/content/pages/checkout";
+import CheckoutFlow from "@/components/CheckoutFlow";
+import { checkoutPage, isPlan, plans } from "@/content/pages/checkout";
 
 export const metadata: Metadata = { title: "Checkout | Tenvor", robots: { index: false, follow: true }, alternates: { canonical: "/checkout" } };
 
@@ -10,7 +11,8 @@ type Props = { searchParams: Promise<{ plan?: string | string[] }> };
 // The plan comes from the query string, so this part renders per request.
 async function Checkout({ searchParams }: Props) {
   const { plan } = await searchParams;
-  return <SitePageView page={checkoutPage(isPlan(plan) ? plan : "plus")} />;
+  const id = isPlan(plan) ? plan : "plus";
+  return <SitePageView page={checkoutPage(id)} aside={<CheckoutFlow key={id} plan={plans[id]} />} />;
 }
 
 export default function Page({ searchParams }: Props) {
