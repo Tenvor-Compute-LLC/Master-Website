@@ -1,0 +1,28 @@
+/* status: live board fed by Uptime Kuma */
+.ls{margin-top:40px;border:1px solid var(--line);border-radius:var(--r);background:var(--card);padding:clamp(20px,3vw,32px)}
+.ls__head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font:500 clamp(20px,2.2vw,26px) var(--display);margin:0 0 8px}
+.ls__head.ls--up b{color:var(--green)}.ls__head.ls--down b{color:var(--accent)}
+.ls__time{margin-left:auto;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.ls__sub{color:var(--muted);margin:0}
+.ls__dot{flex:none;width:10px;height:10px;border-radius:50%;background:var(--muted)}
+.ls__dot.ls--up{background:var(--green);animation:tcv-ping 2.4s infinite}
+.ls__dot.ls--down{background:var(--accent);animation:cfg-blink 1.2s infinite}
+.ls__dot.ls--maint{background:#6aa8ff}
+.ls__inc{margin:16px 0 0;padding:14px 16px;border:1px solid rgba(255,90,31,.45);border-radius:10px;background:rgba(255,90,31,.06)}
+.ls__inc p{margin:6px 0 0;color:var(--muted);white-space:pre-line}
+.ls__group{margin-top:24px}
+.ls__k{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:0 0 8px}
+.ls__row{padding:16px 0;border-top:1px solid var(--line)}
+.ls__top{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.ls__top b{font-weight:500}
+.ls__up{margin-left:auto;white-space:nowrap;font-size:13px;color:var(--text)}.ls__up small{color:var(--muted);font-size:10px;text-transform:uppercase}
+.ls__beats{display:grid;grid-template-columns:repeat(60,1fr);gap:2px;height:30px}
+.ls__beats i{border-radius:2px;background:#26262b}
+.ls__beats i.ls--up{background:var(--green)}.ls__beats i.ls--down{background:var(--accent)}.ls__beats i.ls--pend{background:#d9a441}.ls__beats i.ls--maint{background:#6aa8ff}
+.ls.reveal .ls__beats i:not(.ls--none){transform:scaleY(0);transform-origin:bottom}
+.ls.reveal.in .ls__beats i:not(.ls--none){transform:none;transition:transform .4s cubic-bezier(.22,1,.36,1) calc(var(--i)*12ms)}
+.ls__beats i:last-child{box-shadow:0 0 0 1px rgba(255,255,255,.25)}
+.ls__axis{display:flex;justify-content:space-between;margin:6px 0 0;font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.ls__note{margin-top:16px}
+@media (max-width:600px){.ls__beats{grid-template-columns:repeat(30,1fr);height:24px}.ls__beats i:nth-child(-n+30){display:none}}
+@media (prefers-reduced-motion:reduce){.ls.reveal .ls__beats i{transform:none!important}.ls__dot{animation:none!important}}
