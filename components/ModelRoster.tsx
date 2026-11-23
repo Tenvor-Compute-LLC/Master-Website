@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { head, live, next } from "@/content/models";
+import { live, next } from "@/content/models";
 
 const LOOP = 8000;
 const DONE = 5200; // the settled frame: before hydration, with reduced motion, and while off screen
@@ -36,7 +36,7 @@ export default function ModelRoster() {
 
   return (
     <div ref={box} className="agent ros reveal">
-      <div className="agent__top"><span className="agent__ico"><img src="/img/logo-t.svg" alt="" /></span><b>Models</b><span className="mono live">GET /v1/models</span></div>
+      <div className="agent__top"><span className="agent__ico"><img src="/img/logo-t.svg" alt="" /></span><b>Models</b><span className="mono live"><i className="dot"></i>1 live</span></div>
       <p className="mono ros__ask" aria-hidden="true"><span className="d-c">client.chat.completions.create(</span><br />&nbsp;&nbsp;<span className="d-s">{typed}</span>{e < 1600 && <span className="chat__caret"></span>}</p>
       <div className={`ros__row ros__row--live${hit ? " is-hit" : ""}`}>
         <div className="ros__top"><span className="mono ros__st"><i className="dot"></i>live</span><b>{live.name}</b><code>{live.id}</code></div>
