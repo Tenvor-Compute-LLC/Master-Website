@@ -1,0 +1,61 @@
+/* operators + good: animated windows beside the heading (NodeDay, GoodFlow) and reveals on the card grids */
+.nd__gpu{margin:14px 0 0;font-size:11px;color:var(--muted);text-transform:none}
+.nd__st--working .dot,.nd__st--setting-up .dot,.nd__st--speed-test .dot{background:var(--accent)}
+.nd__st--paused .dot{background:var(--muted);animation:none}
+.nd__rows{display:grid;gap:10px;margin:14px 0 0;padding:14px;border:1px solid var(--line);border-radius:10px;background:#0e0e11}
+.nd__row{display:grid;grid-template-columns:72px minmax(0,1fr) 104px;align-items:center;gap:10px}
+.nd__k{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.nd__v{font-size:11px;color:var(--text);text-transform:none;text-align:right;white-space:nowrap}.nd__v.ok{color:var(--green)}
+.nd__bar{position:relative;display:block;height:6px;border-radius:3px;background:#26262b;overflow:hidden}
+.nd__bar i{position:absolute;inset:0 auto 0 0;background:var(--accent);border-radius:3px;transition:width .3s}
+.nd__bar--mark{overflow:visible}.nd__bar--mark u{position:absolute;top:-3px;bottom:-3px;width:1px;background:var(--muted)}
+.nd__bar--vram i{transition:width .6s cubic-bezier(.22,1,.36,1)}
+.nd__msg{margin:14px 0 0;font-size:14px;color:var(--text);min-height:2.6em}
+.nd__earn{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px;margin-top:10px;font-size:11px;color:var(--muted);text-transform:none}
+.nd__earn b{color:var(--text);font-weight:400}
+.gf__plan .dot{display:none}
+.gf__set{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#0e0e11}
+.gf__set>span:first-child{display:grid;gap:2px}.gf__set b{font-weight:500;font-size:14px}
+.gf__set small{font-size:11px;color:var(--muted);text-transform:none}
+.gf__sw{flex:none;position:relative;width:34px;height:20px;border-radius:10px;border:1px solid #38383d;background:#26262b;transition:background .3s,border-color .3s}
+.gf__sw i{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:var(--muted);transition:transform .3s,background .3s}
+.gf__sw.on{background:rgba(255,90,31,.2);border-color:rgba(255,90,31,.6)}.gf__sw.on i{transform:translateX(14px);background:var(--accent)}
+.gf__job,.gf__trust{display:grid;gap:8px;margin-top:14px}
+.gf__k{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.gf__sub,.gf__v{font-size:11px;color:var(--muted);text-transform:none}.gf__v b{color:var(--green);font-weight:400}
+.gf__segs{display:grid;grid-template-columns:repeat(10,1fr);gap:3px}
+.gf__segs i{height:10px;border-radius:2px;background:#26262b;transition:background .3s}.gf__segs i.on{background:var(--green)}
+.gf__pay{display:flex;justify-content:space-between;gap:12px;margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);font-size:11px;color:var(--muted);text-transform:none}
+.gf__pay b{color:var(--text);font-weight:400}
+/* lists given a class lose the generic prose list rules; restore them */
+.site__prose ol.op-steps,.site__prose ul.op-pts{list-style:none;padding-left:0;color:var(--muted);display:grid;gap:8px;max-width:720px}
+/* setup: numbered steps joined by a line that draws down as they come in */
+.op-steps{position:relative;counter-reset:op}
+.op-steps li{position:relative;padding-left:40px;counter-increment:op}
+.op-steps li>b:first-child{color:var(--text)}
+.op-steps li::before{content:counter(op);position:absolute;left:0;top:0;width:24px;height:24px;border-radius:50%;border:1px solid rgba(255,90,31,.6);display:grid;place-items:center;font:12px var(--mono);color:var(--accent);background:var(--bg,#0b0b0d);z-index:1}
+.op-steps::before{content:"";position:absolute;left:12px;top:12px;bottom:24px;width:1px;background:var(--line);transform-origin:top}
+.op-pts li{position:relative;padding-left:22px}
+.op-pts li::before{content:"";position:absolute;left:2px;top:.55em;width:8px;height:8px;border-radius:2px;background:var(--accent)}
+/* requirements: each row is checked off in turn, as the app checks the PC */
+.op-req dl>div{position:relative;padding-right:28px}
+.op-req dl>div::after{content:"✓";position:absolute;right:0;top:12px;color:var(--green);font-size:13px}
+.js .op-req.reveal dl>div::after{opacity:0;transform:scale(.5);transition:opacity .3s,transform .3s}
+.js .op-req.reveal.in dl>div::after{opacity:1;transform:none}
+.op-req dl>div:nth-child(1)::after{transition-delay:.4s!important}.op-req dl>div:nth-child(2)::after{transition-delay:.7s!important}.op-req dl>div:nth-child(3)::after{transition-delay:1s!important}.op-req dl>div:nth-child(4)::after{transition-delay:1.3s!important}.op-req dl>div:nth-child(5)::after{transition-delay:1.6s!important}
+/* staggered children: steps, points, the alpha list, the card grids */
+.js :is(.op-steps,.op-pts).reveal>li,.js .op-list.reveal>div,.js .gd-grid.reveal>.s-card{opacity:0;transform:translateY(10px);transition:opacity .5s,transform .5s}
+.js :is(.op-steps,.op-pts).reveal.in>li,.js .op-list.reveal.in>div,.js .gd-grid.reveal.in>.s-card{opacity:1;transform:none}
+.js .op-steps.reveal::before{transform:scaleY(0);transition:transform 1.2s cubic-bezier(.22,1,.36,1) .2s}
+.js .op-steps.reveal.in::before{transform:none}
+:is(.op-steps,.op-pts)>li:nth-child(2),.op-list>div:nth-child(2),.gd-grid>.s-card:nth-child(2){transition-delay:.15s!important}
+:is(.op-steps,.op-pts)>li:nth-child(3),.op-list>div:nth-child(3),.gd-grid>.s-card:nth-child(3){transition-delay:.3s!important}
+.op-list>div:nth-child(4){transition-delay:.45s!important}.op-list>div:nth-child(5){transition-delay:.6s!important}.op-list>div:nth-child(6){transition-delay:.75s!important}
+/* good: the trust figure, and the planned / disabled tags on the two kinds of work */
+.gd-fig{font:500 clamp(36px,4vw,48px)/1 var(--display);color:var(--green)}
+.gd-tag{display:inline-flex;align-items:center;gap:6px;font:11px var(--mono);text-transform:uppercase;letter-spacing:.08em;border:1px solid var(--line);border-radius:99px;padding:2px 10px;color:var(--muted)}
+.gd-tag::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.gd-tag--plan{color:var(--accent);border-color:rgba(255,90,31,.45)}.gd-tag--plan::before{animation:cfg-blink 1.6s ease-in-out infinite}
+.gd-tag--off::before{background:none;border:1px solid currentColor;box-sizing:border-box}
+@media (max-width:480px){.nd__row{grid-template-columns:64px minmax(0,1fr) 92px}}
+@media (prefers-reduced-motion:reduce){.gd-tag--plan::before{animation:none}.js .op-req.reveal dl>div::after,.js :is(.op-steps,.op-pts).reveal>li,.js .op-list.reveal>div,.js .gd-grid.reveal>.s-card{opacity:1;transform:none}.js .op-steps.reveal::before{transform:none}}
