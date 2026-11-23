@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import PageEffects from "@/components/PageEffects";
 import Head from "@/components/Head";
 import ModelRoster from "@/components/ModelRoster";
-import MoeGrid from "@/components/MoeGrid";
+import Globe from "@/components/Globe";
 import { Btn, Eyebrow, H2 } from "@/components/ui";
 import { pageMeta } from "@/lib/seo";
 import { head, live, next, roadmap, use } from "@/content/models";
@@ -44,7 +44,7 @@ export default function Page() {
                 <ul className="tags">{live.tags.map(t => <li key={t}><span className="mono">{t}</span></li>)}</ul>
                 <dl className="mdl__rows">{live.rows.map(([k, v]) => <div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}</dl>
               </div>
-              <div className="plan reveal"><h4>Mixture of experts</h4><MoeGrid /></div>
+              <div className="plan reveal"><h4>Served by idle GPUs</h4><Globe /></div>
             </div>
           </div>
         </section>
