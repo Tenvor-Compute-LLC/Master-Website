@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState, type CSSProperties } from "react";
-import { live, next, roadmap } from "@/content/models";
+import { abliterated, live, next, roadmap } from "@/content/models";
 
 const LOOP = 8000;
 const DONE = 5200; // the settled frame: before hydration, with reduced motion, and while off screen
@@ -46,6 +46,10 @@ export default function ModelRoster() {
       <div className="ros__row ros__row--next">
         <div className="ros__top"><span className="mono ros__st ros__st--next">next</span><b>{next.name}</b><span className="mono ros__soon">{next.status}</span></div>
         <p className="mono ros__meta">{next.specs.map(s => s[1]).join(" · ")}</p>
+      </div>
+      <div className="ros__row ros__row--next">
+        <div className="ros__top"><span className="mono ros__st ros__st--next">soon</span><b>{abliterated.title}</b></div>
+        <p className="mono ros__meta">Built-in refusals removed</p>
       </div>
       <a href="#roadmap" className="mono ros__road"><span className="ros__dots">{roadmap.models.map(m => <i key={m.name} style={{ "--r": m.total / 1000 * 28 } as CSSProperties}></i>)}</span>+{roadmap.models.length} bigger models {roadmap.label.toLowerCase()} <span className="accent">→</span></a>
       <p className="mono chat__note">New open models are added as they&apos;re released.</p>
