@@ -1,32 +1,4 @@
 /* operators + good: animated windows beside the heading (NodeDay, GoodFlow) and reveals on the card grids */
-.nd__gpu{margin:14px 0 0;font-size:11px;color:var(--muted);text-transform:none}
-.nd__st--working .dot,.nd__st--setting-up .dot,.nd__st--speed-test .dot{background:var(--accent)}
-.nd__st--paused .dot{background:var(--muted);animation:none}
-.nd__rows{display:grid;gap:10px;margin:14px 0 0;padding:14px;border:1px solid var(--line);border-radius:10px;background:#0e0e11}
-.nd__row{display:grid;grid-template-columns:72px minmax(0,1fr) 104px;align-items:center;gap:10px}
-.nd__k{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
-.nd__v{font-size:11px;color:var(--text);text-transform:none;text-align:right;white-space:nowrap}.nd__v.ok{color:var(--green)}
-.nd__bar{position:relative;display:block;height:6px;border-radius:3px;background:#26262b;overflow:hidden}
-.nd__bar i{position:absolute;inset:0 auto 0 0;background:var(--accent);border-radius:3px;transition:width .3s}
-.nd__bar--mark{overflow:visible}.nd__bar--mark u{position:absolute;top:-3px;bottom:-3px;width:1px;background:var(--muted)}
-.nd__bar--vram i{transition:width .6s cubic-bezier(.22,1,.36,1)}
-.nd__msg{margin:14px 0 0;font-size:14px;color:var(--text);min-height:2.6em}
-.nd__earn{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px;margin-top:10px;font-size:11px;color:var(--muted);text-transform:none}
-.nd__earn b{color:var(--text);font-weight:400}
-.gf__plan .dot{display:none}
-.gf__set{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#0e0e11}
-.gf__set>span:first-child{display:grid;gap:2px}.gf__set b{font-weight:500;font-size:14px}
-.gf__set small{font-size:11px;color:var(--muted);text-transform:none}
-.gf__sw{flex:none;position:relative;width:34px;height:20px;border-radius:10px;border:1px solid #38383d;background:#26262b;transition:background .3s,border-color .3s}
-.gf__sw i{position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:var(--muted);transition:transform .3s,background .3s}
-.gf__sw.on{background:rgba(255,90,31,.2);border-color:rgba(255,90,31,.6)}.gf__sw.on i{transform:translateX(14px);background:var(--accent)}
-.gf__job,.gf__trust{display:grid;gap:8px;margin-top:14px}
-.gf__k{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
-.gf__sub,.gf__v{font-size:11px;color:var(--muted);text-transform:none}.gf__v b{color:var(--green);font-weight:400}
-.gf__segs{display:grid;grid-template-columns:repeat(10,1fr);gap:3px}
-.gf__segs i{height:10px;border-radius:2px;background:#26262b;transition:background .3s}.gf__segs i.on{background:var(--green)}
-.gf__pay{display:flex;justify-content:space-between;gap:12px;margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);font-size:11px;color:var(--muted);text-transform:none}
-.gf__pay b{color:var(--text);font-weight:400}
 /* lists given a class lose the generic prose list rules; restore them */
 .site__prose ol.op-steps,.site__prose ul.op-pts{list-style:none;padding-left:0;color:var(--muted);display:grid;gap:8px;max-width:720px}
 /* setup: numbered steps joined by a line that draws down as they come in */
@@ -57,5 +29,4 @@
 .gd-tag::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
 .gd-tag--plan{color:var(--accent);border-color:rgba(255,90,31,.45)}.gd-tag--plan::before{animation:cfg-blink 1.6s ease-in-out infinite}
 .gd-tag--off::before{background:none;border:1px solid currentColor;box-sizing:border-box}
-@media (max-width:480px){.nd__row{grid-template-columns:64px minmax(0,1fr) 92px}}
 @media (prefers-reduced-motion:reduce){.gd-tag--plan::before{animation:none}.js .op-req.reveal dl>div::after,.js :is(.op-steps,.op-pts).reveal>li,.js .op-list.reveal>div,.js .gd-grid.reveal>.s-card{opacity:1;transform:none}.js .op-steps.reveal::before{transform:none}}

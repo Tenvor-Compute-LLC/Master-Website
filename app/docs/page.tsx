@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { pageMeta } from "@/lib/seo";
-import DocFlow from "@/components/DocFlow";
+import DotArt from "@/components/DotArt";
 import DocShell from "@/components/DocShell";
 import { Arrow, Eyebrow, H2 } from "@/components/ui";
 import { alpha, docsHead, glance, glanceNote, how, integrations, next, reference, reviewNote, start, toc, works, type DocCard, type Rich } from "@/content/docs";
@@ -25,7 +25,7 @@ const Sec = ({ id, num, title, children }: { id: string; num: string; title: str
 
 export default function Docs() {
   return (
-    <DocShell head={docsHead} toc={toc} next={next} aside={<DocFlow />}>
+    <DocShell head={docsHead} toc={toc} next={next} aside={<DotArt scene="docs" label="Code typed line by line, then the response comes back" />}>
       <Sec id="start" num="01" title="Start here">
         <p>{start.intro}</p>
         <ol className="docs__steps">{start.steps.map((s, i) => <li key={s.title}><span className="mono">{String(i + 1).padStart(2, "0")}</span><h3>{s.title}</h3><p><R r={s.body} /></p></li>)}</ol>

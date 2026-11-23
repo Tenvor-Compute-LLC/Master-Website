@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import SitePageView from "@/components/SitePage";
-import CheckoutFlow from "@/components/CheckoutFlow";
-import { checkoutPage, isPlan, plans } from "@/content/pages/checkout";
+import DotArt from "@/components/DotArt";
+import { checkoutPage, isPlan } from "@/content/pages/checkout";
 
 export const metadata: Metadata = { title: "Checkout | Tenvor", robots: { index: false, follow: true }, alternates: { canonical: "/checkout" } };
 
@@ -12,7 +12,7 @@ type Props = { searchParams: Promise<{ plan?: string | string[] }> };
 async function Checkout({ searchParams }: Props) {
   const { plan } = await searchParams;
   const id = isPlan(plan) ? plan : "plus";
-  return <SitePageView page={checkoutPage(id)} aside={<CheckoutFlow key={id} plan={plans[id]} />} />;
+  return <SitePageView page={checkoutPage(id)} aside={<DotArt scene="checkout" label="Four weekly allowances drain in turn; half of what is left rolls over" />} />;
 }
 
 export default function Page({ searchParams }: Props) {

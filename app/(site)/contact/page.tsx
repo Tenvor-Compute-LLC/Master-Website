@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ContactFlow from "@/components/ContactFlow";
+import DotArt from "@/components/DotArt";
 import ContactForm from "@/components/ContactForm";
 import PageEffects from "@/components/PageEffects";
 import { Eyebrow } from "@/components/ui";
@@ -19,7 +19,7 @@ export default function Page() {
             <h1 className="display">How can we help?</h1>
             <p className="lead">{intro}</p>
           </div>
-          <ContactFlow />
+          <DotArt scene="contact" label="A message goes out and a reply comes back" />
         </header>
         <div className="docs__body site__body"><ContactForm /></div>
       </div>
