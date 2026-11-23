@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { describe, ld, pageMeta } from "@/lib/seo";
 import SitePageView from "@/components/SitePage";
+import TrustFlow from "@/components/TrustFlow";
 import page from "@/content/pages/trust";
 
 export const metadata: Metadata = pageMeta("Trust center | Tenvor", page.path, page.intro);
@@ -13,5 +14,5 @@ const trustLd = {
 };
 
 export default function Page() {
-  return <><script type="application/ld+json" dangerouslySetInnerHTML={ld(trustLd)} /><SitePageView page={page} /></>;
+  return <><script type="application/ld+json" dangerouslySetInnerHTML={ld(trustLd)} /><SitePageView page={page} aside={<TrustFlow />} /></>;
 }
