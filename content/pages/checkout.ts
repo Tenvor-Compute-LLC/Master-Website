@@ -2,7 +2,7 @@
 // Card payments are not open there, so this has no payment form: the plan switcher is links, Sign up / Sign in go to the Console.
 import type { SitePage } from "./types";
 
-const plans = {
+export const plans = {
   lite: { name: "Lite", price: "$6", week: "$1.75", tokens: "12.8M", month: "$7.00", msgs: "250", more: "16%" },
   plus: { name: "Plus", price: "$12.50", week: "$3.75", tokens: "27.3M", month: "$15.00", msgs: "600", more: "20%" },
   max: { name: "Max", price: "$19", week: "$5.75", tokens: "41.9M", month: "$23.00", msgs: "900", more: "21%" },

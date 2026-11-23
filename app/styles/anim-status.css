@@ -1,0 +1,24 @@
+/* anim-status: the /status incident-reporting aside and the /checkout month aside */
+.sf__rows{list-style:none;margin:16px 0 4px;padding:0;display:grid;gap:6px}
+.sf__rows li{display:grid;gap:2px;padding:8px 12px;border:1px solid var(--line);border-radius:10px;background:#0e0e11;transition:border-color .3s}
+.sf__rows li.is-hit{border-color:rgba(255,90,31,.5)}
+.sf__s{font-size:12px;text-transform:none;letter-spacing:0;color:var(--text);overflow-wrap:anywhere}
+.sf__r{font-size:12px;color:var(--muted)}
+.sf__rows li.is-hit .sf__r{color:var(--accent)}
+.ckf__weeks{list-style:none;margin:16px 0 14px;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.ckf__weeks li{display:grid;gap:2px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;opacity:.45;transition:opacity .3s,border-color .3s}
+.ckf__weeks li span{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.ckf__weeks li b{font-weight:400;font-size:12px;text-transform:none;letter-spacing:0}
+.ckf__weeks li.is-on{opacity:1;border-color:rgba(255,90,31,.6)}
+.ckf__weeks li.is-done{opacity:1;border-color:rgba(61,220,132,.35)}
+.ckf__row{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:10px}
+.ckf__v{font-size:12px;text-transform:none;letter-spacing:0;color:var(--text)}
+.ckf__roll{color:var(--green)}
+.ckf__bar{display:flex;height:6px;margin-top:8px;border-radius:3px;background:var(--line);overflow:hidden}
+.ckf__bar i{display:block;height:100%;background:var(--accent)}
+.ckf__bar .ckf__out{background:var(--green)}
+.ckf__t{margin:8px 0 0;font-size:13px;color:var(--muted)}
+.ckf__order{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:12px 0 0;font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.ckf__order span{padding:3px 8px;border:1px solid var(--line);border-radius:5px}
+.ckf__order span:first-child{color:var(--text);border-color:rgba(255,90,31,.6);background:rgba(255,90,31,.1)}
+@media (max-width:420px){.ckf__weeks{grid-template-columns:repeat(2,1fr)}}
