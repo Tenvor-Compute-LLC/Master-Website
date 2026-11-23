@@ -6,7 +6,7 @@ import ModelRoster from "@/components/ModelRoster";
 import MoeGrid from "@/components/MoeGrid";
 import { Btn, Eyebrow, H2 } from "@/components/ui";
 import { pageMeta } from "@/lib/seo";
-import { head, live, next, use } from "@/content/models";
+import { head, live, next, roadmap, use } from "@/content/models";
 
 export const metadata: Metadata = pageMeta("Models | Tenvor", "/models", head.intro);
 
@@ -57,10 +57,31 @@ export default function Page() {
           </div>
         </section>
 
+        <section className="sec" id="roadmap">
+          <div className="wrap">
+            <Head num="04" eyebrow={roadmap.label} title={roadmap.title} side={roadmap.side} />
+            <div className="rmap reveal">
+              {roadmap.models.map((m, i) => (
+                <div className="rmap__m" key={m.name} style={{ "--i": i, "--w": m.total / 1000 } as CSSProperties}>
+                  <div className="rmap__top"><b>{m.name}</b><span className="tag mono">{roadmap.label}</span></div>
+                  <p className="mono rmap__by">{m.maker}</p>
+                  <span className="rmap__bar" aria-hidden="true"><span></span></span>
+                  <p className="mono rmap__size">{m.size} <span>parameters</span></p>
+                </div>
+              ))}
+              <div className="rmap__m rmap__ref" style={{ "--i": 4, "--w": 35 / 1000 } as CSSProperties}>
+                <div className="rmap__top"><b>{live.name}</b><span className="mono ros__st"><i className="dot"></i>live today</span></div>
+                <span className="rmap__bar" aria-hidden="true"><span></span></span>
+                <p className="mono rmap__size">35B · 3B active <span>parameters</span></p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section className="sec band">
           <div className="wrap split chat">
             <div className="reveal">
-              <Eyebrow num="04">Use a model</Eyebrow>
+              <Eyebrow num="05">Use a model</Eyebrow>
               <H2>{use.title}</H2>
               <p className="lead">{use.text}</p>
               <div className="band__cta"><Btn href={CONSOLE} variant="accent">Get API key</Btn><Btn href="/docs/models-and-limits" variant="ghost">Models and limits</Btn></div>

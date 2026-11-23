@@ -1110,3 +1110,22 @@ a.tc-card:hover{border-color:rgba(255,90,31,.5);transform:translateY(-2px)}
 .mdl__pair .moe__grid,.mdl__pair .moe__cap{max-width:none}
 .stats--3 div,.stats--4 div{gap:10px}
 .plan .tags{border:0;margin:20px 0 0;padding:0;flex:none}.plan .tags li{padding:0}
+
+/* Models: roadmap bars sized by total parameters, out of 1T */
+.rmap{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.rmap__m{border:1px solid var(--line);border-radius:18px;background:var(--card);padding:24px 26px;transition:border-color .3s,transform .3s cubic-bezier(.2,.8,.2,1)}
+@media (hover:hover){.rmap__m:hover{border-color:rgba(255,90,31,.5);transform:translateY(-4px)}}
+.rmap__top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.rmap__top b{font:500 clamp(22px,2.2vw,30px) var(--display);letter-spacing:-.03em}
+.rmap__by{color:var(--muted);font-size:11px;margin-top:6px;text-transform:uppercase;letter-spacing:.08em}
+.rmap__bar{display:block;height:6px;margin-top:26px;background:#1d1d21;border-radius:6px;overflow:hidden}
+.rmap__bar span{display:block;height:100%;width:calc(var(--w)*100%);min-width:6px;background:linear-gradient(90deg,#ff8a5c,var(--accent));border-radius:6px;box-shadow:0 0 16px rgba(255,90,31,.5);transform-origin:left center;transform:scaleX(0)}
+.rmap.in .rmap__bar span{animation:cfg-bar 1.6s cubic-bezier(.4,0,.2,1) calc(.3s + var(--i)*.18s) both}
+.rmap__size{margin-top:12px;font-size:12px;color:var(--text)}
+.rmap__size span{color:var(--muted)}
+.rmap__ref{grid-column:1/-1;background:#0f0f12;border-style:dashed}
+.rmap__ref .rmap__bar span{background:var(--green);box-shadow:none}
+.ros__road{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;margin-top:14px;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.ros__road b{font-weight:400;color:var(--text);text-transform:none;letter-spacing:0;border:1px dashed #38383d;border-radius:5px;padding:3px 8px}
+@media (max-width:700px){.rmap{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.rmap__bar span{transform:none}}

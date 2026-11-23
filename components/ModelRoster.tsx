@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { live, next } from "@/content/models";
+import { live, next, roadmap } from "@/content/models";
 
 const LOOP = 8000;
 const DONE = 5200; // the settled frame: before hydration, with reduced motion, and while off screen
@@ -47,6 +47,7 @@ export default function ModelRoster() {
         <div className="ros__top"><span className="mono ros__st ros__st--next">next</span><b>{next.name}</b><span className="mono ros__soon">{next.status}</span></div>
         <p className="mono ros__meta">{next.specs.map(s => s[1]).join(" · ")}</p>
       </div>
+      <p className="mono ros__road"><span>{roadmap.label}</span>{roadmap.models.map(m => <b key={m.name}>{m.name}</b>)}</p>
       <p className="mono chat__note">New open models are added as they&apos;re released.</p>
     </div>
   );

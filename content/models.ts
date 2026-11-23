@@ -37,3 +37,16 @@ export const use = {
     ")",
   ],
 };
+
+/** Bigger open models the owner asked to show as planned (2026-11-22). Not from tenvor.io: name, maker and size only, no dates or prices. */
+export const roadmap = {
+  label: "On the roadmap",
+  title: "Bigger models on the roadmap.",
+  side: "Larger open models we plan to bring to the network. No dates or prices yet.",
+  models: [
+    { name: "gpt-oss-120b", maker: "OpenAI", total: 117, size: "117B · 5.1B active" },
+    { name: "Qwen3 235B-A22B", maker: "Alibaba Qwen", total: 235, size: "235B · 22B active" },
+    { name: "DeepSeek V3", maker: "DeepSeek", total: 671, size: "671B · 37B active" },
+    { name: "Kimi K2", maker: "Moonshot AI", total: 1000, size: "1T · 32B active" },
+  ],
+};
