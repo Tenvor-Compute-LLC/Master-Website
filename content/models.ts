@@ -12,7 +12,10 @@ export const live = {
   tags: ["64K context", "tools", "reasoning", "streaming", "4-bit · Q4_K_XL", "Apache-2.0"],
   prices: [["$0.126", "Input"], ["$0.063", "Cached input"], ["$0.81", "Output"]],
   per: "per million tokens · minimum $0.000134 a request",
-  rows: [["Parameters", "35B · 3B active"], ["In Chat & Work", "Tenvor-35B"]],
+  rows: [["Parameters", "35B · 3B active"], ["In Chat & Work", "Tenvor-35B"],
+    // from Tenvor's public catalog, orchestrator.tenvor.io/api/catalog/public (read 2026-11-22)
+    ["Context window", "65,536 tokens"], ["Max output", "65,536 tokens"], ["Max input", "4 MB"],
+    ["JSON output", "Object · schema"], ["Reasoning", "6 levels"]],
 };
 
 export const next = {
