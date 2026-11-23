@@ -1,10 +1,12 @@
+import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 import PageEffects from "@/components/PageEffects";
+import ChatDemo from "@/components/ChatDemo";
 import CtaBand from "@/components/CtaBand";
 import Head from "@/components/Head";
 import { Arrow, Btn, Eyebrow, H2 } from "@/components/ui";
 import { pageMeta } from "@/lib/seo";
-import { CONSOLE, close, cost, hero, limits, model, modes, sample } from "@/content/chat";
+import { CONSOLE, close, cost, hero, limits, model, modes } from "@/content/chat";
 
 export const metadata: Metadata = pageMeta("Chat & Work | Tenvor", "/chat", "Ask a question, or hand over a file. Chat answers and can search the web. Work can also run code on your files and hand back the results.");
 
@@ -21,15 +23,7 @@ export default function Page() {
               <div className="band__cta"><Btn href={CONSOLE} variant="accent">Sign up</Btn><Btn href={CONSOLE} variant="ghost">Sign in</Btn></div>
               <p className="mono chat__start">{hero.start}</p>
             </div>
-            <figure className="agent chat__win reveal">
-              <div className="agent__top"><span className="agent__ico"><img src="/img/logo-t.svg" alt="" /></span><b>Chat &amp; Work</b><span className="mono live"><span className="tag mono">Sample</span></span></div>
-              <p className="chat__me">{sample.ask}</p>
-              <div className="chat__bot"><p className="mono chat__who">{sample.model}</p><p>{sample.reply}</p>
-                <dl className="mono chat__rcpt">{sample.receipt.map(([k, v]) => <div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}</dl>
-              </div>
-              <div className="chat__box" aria-hidden="true"><span>Message</span><span className="mono chat__sw"><i></i>Work</span></div>
-              <figcaption className="mono chat__note">{sample.note}</figcaption>
-            </figure>
+            <ChatDemo />
           </div>
         </section>
 
@@ -66,7 +60,7 @@ export default function Page() {
           <div className="wrap">
             <Head num="04" eyebrow="Each task" title={limits.title} side={limits.text} />
             <div className="stats stats--3 reveal">
-              {limits.items.map(([n, l]) => <div key={l}><small className="mono">Up to</small><b className={n === "10" ? "accent" : undefined}>{n}</b><small className="mono">{l}</small></div>)}
+              {limits.items.map(([n, l], i) => <div key={l} style={{ "--i": i } as CSSProperties}><small className="mono">Up to</small><b className={n === "10" ? "accent" : undefined}>{n}</b><small className="mono">{l}</small><span className="bar"><span></span></span></div>)}
             </div>
           </div>
         </section>

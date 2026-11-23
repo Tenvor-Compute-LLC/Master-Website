@@ -978,3 +978,31 @@ a.tc-card:hover{border-color:rgba(255,90,31,.5);transform:translateY(-2px)}
 @media (max-width:600px){.stats--3{grid-template-columns:1fr}}
 .d-tbl--fit table{min-width:0}
 .chat__txt .lead+.lead{margin-top:16px}
+
+/* Chat demo: the ghost holds the finished size so the hero never jumps while the reply streams */
+.chat__win{transition:opacity .4s ease}
+.chat__win.is-out .chat__live,.chat__win.is-out .chat__box>span:first-child{opacity:0;transition:opacity .4s ease}
+.chat__log{display:grid}
+.chat__ghost,.chat__live{grid-area:1/1}
+.chat__ghost{visibility:hidden}
+.chat__live{align-self:end}
+.chat__live .chat__me{animation:chat-in .45s cubic-bezier(.22,1,.36,1) both}
+.chat__live .chat__bot{animation:cfg-fade .4s ease both}
+.chat__rcpt div{animation:chat-pop .35s cubic-bezier(.22,1,.36,1) both}
+.chat__dots{display:inline-flex;gap:3px;margin-left:10px;vertical-align:middle}
+.chat__dots i{width:4px;height:4px;border-radius:50%;background:var(--accent);animation:cfg-blink .9s ease-in-out infinite}
+.chat__dots i:nth-child(2){animation-delay:.15s}.chat__dots i:nth-child(3){animation-delay:.3s}
+.chat__caret{display:inline-block;width:7px;height:1em;margin-left:3px;vertical-align:-2px;background:var(--accent);animation:swb-blink 1s steps(1) infinite}
+.chat__box{transition:border-color .3s,box-shadow .3s}
+.chat__box.is-typing{border-color:var(--accent);box-shadow:0 0 0 4px rgba(255,90,31,.14);color:var(--text)}
+.chat__win{box-shadow:0 0 0 1px rgba(255,90,31,.08),0 30px 80px -40px rgba(255,90,31,.35)}
+@keyframes chat-in{from{opacity:0;transform:translateY(10px) scale(.97)}}
+@keyframes chat-pop{from{opacity:0;transform:scale(.85)}}
+/* task limit tiles: a meter fills under each number, one after another */
+.stats--3 .bar{margin-top:14px}
+.stats--3 .bar span{transform:scaleX(0)}
+.stats--3.in .bar span{animation:cfg-bar 1.4s cubic-bezier(.4,0,.2,1) calc(.3s + var(--i)*.25s) both}
+.stats--3 div{transition:border-color .3s,transform .3s cubic-bezier(.2,.8,.2,1)}
+@media (hover:hover){.stats--3 div:hover,.grid3--2 .plan:hover{border-color:rgba(255,90,31,.5);transform:translateY(-4px)}}
+.grid3--2 .plan{transition:border-color .3s,transform .3s cubic-bezier(.2,.8,.2,1)}
+@media (prefers-reduced-motion:reduce){.stats--3 .bar span{transform:none}}
