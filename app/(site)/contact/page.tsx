@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ContactFlow from "@/components/ContactFlow";
 import ContactForm from "@/components/ContactForm";
 import PageEffects from "@/components/PageEffects";
 import { Eyebrow } from "@/components/ui";
@@ -12,10 +13,13 @@ export default function Page() {
   return (
     <main className="docs site">
       <div className="wrap">
-        <header className="docs__head">
-          <Eyebrow>Contact</Eyebrow>
-          <h1 className="display">How can we help?</h1>
-          <p className="lead">{intro}</p>
+        <header className="docs__head split chat">
+          <div>
+            <Eyebrow>Contact</Eyebrow>
+            <h1 className="display">How can we help?</h1>
+            <p className="lead">{intro}</p>
+          </div>
+          <ContactFlow />
         </header>
         <div className="docs__body site__body"><ContactForm /></div>
       </div>

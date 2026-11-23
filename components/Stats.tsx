@@ -1,3 +1,5 @@
+import "@/app/styles/anim-docs.css";
+import CountUp from "./CountUp";
 import { stats } from "@/content/stats";
 import { Arrow, Eyebrow, H2 } from "./ui";
 
@@ -12,7 +14,7 @@ export default function Stats() {
           <a href="/about" className="link">Meet the team <Arrow className="accent" /></a>
         </div>
         <div className="stats reveal">
-          {stats.map(s => <div key={s.label}><b className={s.accent ? "accent" : undefined}>{s.value}</b><small className="mono">{s.label}</small></div>)}
+          {stats.map(s => <div key={s.label}><b className={s.accent ? "accent" : undefined}><CountUp value={s.value} /></b><small className="mono">{s.label}</small></div>)}
         </div>
       </div>
     </section>
