@@ -9,4 +9,7 @@ export const faqs: Faq[] = [
   { q: "Do I need to change my code?", a: "Only the base URL and the key. Tenvor speaks the OpenAI API, so the OpenAI SDKs, curl and JetBrains AI work as they are, and OpenCode and Pi set up in one line.", href: "/docs/quickstart" },
   { q: "What happens if a machine drops out?", a: "If a node fails before any output, Tenvor may retry once on another free node. If it fails mid-stream, it is not retried. Either way you pay nothing. In the alpha there is no uptime SLA.", href: "/docs/models-and-limits" },
   { q: "Can I run a node on my own GPU?", a: "Yes, by invitation. You need an NVIDIA card with 10 GB+ of video memory on Windows 11 or Linux. The app tests your PC first, and you can pause it any time. Payouts are not open yet.", href: "/operators" },
+  { q: "Do I need a plan?", a: "No. Without a plan you pay for what you use, from prepaid credit. New accounts start with $0.25 of free credit.", href: "/docs/billing" },
+  { q: "Can I cancel?", a: "Yes, at any time, from the console or by writing to billing@tenvor.io. Cancellation takes effect at the end of the paid month, and you keep the plan until then.", href: "/legal/service-credits" },
+  { q: "Is there a money-back guarantee?", a: "Not satisfied? Ask for the unused part of this month's plan back. It is an alpha guarantee, and each account can use it once.", href: "/legal/service-credits" },
 ];
