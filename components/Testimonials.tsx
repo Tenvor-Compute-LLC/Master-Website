@@ -7,7 +7,7 @@ export default function Testimonials() {
   return (
     <section className="sec">
       <div className="wrap">
-        <Head num="04" eyebrow="Why teams try it" title="What you get on day one." side="Facts from our pricing, trust and docs pages. No made-up customers." />
+        <Head num="05" eyebrow="Why teams try it" title="What you get on day one." side="Facts from our pricing, trust and docs pages. No made-up customers." />
         <div className="grid3">
           {testimonials.map(t => (
             <article className="quote reveal" key={t.tag}>

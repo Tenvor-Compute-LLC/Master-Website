@@ -8,7 +8,7 @@ export default function Projects() {
   return (
     <section className="sec" id="use-cases">
       <div className="wrap">
-        <Head num="02" eyebrow="Use cases" title="Build on open models, or serve them."
+        <Head num="03" eyebrow="Use cases" title="Build on open models, or serve them."
           side="One OpenAI-compatible API, served by GPUs on the Tenvor network. Each request runs sealed. Start free, no card."
           cta={{ href: "/models", label: "See the models" }} />
         <div className="cases">

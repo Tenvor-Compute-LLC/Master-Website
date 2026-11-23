@@ -910,3 +910,26 @@ a.tc-card:hover{border-color:rgba(255,90,31,.5);transform:translateY(-2px)}
 .band__in{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end}
 .band__cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
 @media (max-width:900px){.band__in{grid-template-columns:1fr;gap:8px}}
+
+/* nav: grouped menus (same colours, type and borders as the rest of the nav) */
+.nav__links{align-items:center}
+.nav__grp{position:relative}
+.nav__grp>button{display:inline-flex;align-items:center;gap:6px;background:none;border:0;color:inherit;font:inherit;cursor:pointer;padding:0}
+.nav__grp>button i{width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .25s}
+.nav__grp.is-open>button i{transform:translateY(1px) rotate(-135deg)}
+.nav__grp>button:hover,.nav__links .cur{color:var(--accent)}
+.nav__drop{position:absolute;top:100%;left:-16px;min-width:210px;margin-top:22px;padding:8px;display:grid;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 18px 40px rgba(0,0,0,.45);opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .2s,transform .2s,visibility .2s}
+.nav__drop::before{content:"";position:absolute;left:0;right:0;top:-24px;height:24px}
+.nav__grp.is-open .nav__drop{opacity:1;visibility:visible;transform:none}
+.nav__drop a{padding:9px 12px;border-radius:8px;white-space:nowrap}
+.nav__drop a:hover{background:rgba(242,241,236,.06)}
+@media (max-width:900px){
+  .nav__links{align-items:stretch;max-height:calc(100vh - 72px);overflow-y:auto}
+  .nav__grp>button{width:100%;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--line);font-size:18px}
+  .nav__drop{position:static;margin:0;padding:0 0 8px 12px;min-width:0;background:none;border:0;box-shadow:none;border-radius:0;display:none;opacity:1;visibility:visible;transform:none}
+  .nav__grp.is-open .nav__drop{display:grid}
+  .nav__drop::before{display:none}
+  .nav__links .nav__drop a{font-size:16px;padding:12px 0;border-radius:0;color:var(--muted)}
+  .nav__links .nav__drop a.cur{color:var(--accent)}
+}
+@media (prefers-reduced-motion:reduce){.nav__drop,.nav__grp>button i{transition:none}}

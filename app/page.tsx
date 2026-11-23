@@ -3,7 +3,8 @@ import Hero from "@/components/Hero";
 import Integrations from "@/components/Integrations";
 import Nav from "@/components/Nav";
 import PageEffects from "@/components/PageEffects";
-import PricingBand from "@/components/PricingBand";
+import CtaBand from "@/components/CtaBand";
+import Process from "@/components/Process";
 import Problem from "@/components/Problem";
 import Projects from "@/components/Projects";
 import Sprite from "@/components/Sprite";
@@ -32,10 +33,12 @@ export default function Home() {
       <main>
         <Hero />
         <Problem />
+        <Process />
         <Projects />
         <Integrations />
         <Testimonials />
-        <PricingBand />
+        <CtaBand num="06" eyebrow="Pricing" title="Pay monthly or per token." text="New accounts start with $0.25 of free credit; failed requests cost $0."
+          primary={{ href: "/pricing", label: "See pricing" }} secondary={{ href: "/products", label: "Explore products" }} />
       </main>
       <Footer />
       <PageEffects />
