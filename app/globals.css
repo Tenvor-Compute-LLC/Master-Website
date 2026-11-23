@@ -1154,3 +1154,48 @@ a.tc-card:hover{border-color:rgba(255,90,31,.5);transform:translateY(-2px)}
 .tf__hash{flex-basis:100%;font-size:11px;color:var(--muted);text-transform:none}.tf__hash.ok{color:var(--green)}
 .tf__count{font-size:12px;color:var(--muted)}.tf__count b{color:var(--text);font-weight:400}
 .docs__head.split .lead{margin-bottom:0}
+/* trust: small live visuals on the commitment cards */
+.tcv{display:flex;align-items:center;gap:12px;height:44px;padding:0 12px;border:1px solid var(--line);border-radius:10px;background:#0e0e11;margin-bottom:6px;overflow:hidden}
+.tcv__lbl{margin-left:auto;font:400 10px var(--mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted);white-space:nowrap}
+.tcv__lbl--ok{color:var(--green)}
+.tcv__toks{display:flex;gap:3px}
+.tcv__toks i{width:5px;height:14px;border-radius:2px;background:#26262b;animation:tcv-tok 3.6s calc(var(--i)*.12s) infinite}
+@keyframes tcv-tok{0%,6%{background:#26262b}10%,75%{background:var(--accent)}85%,100%{background:#26262b}}
+.tcv__line{position:relative;flex:1;max-width:80px;height:1px;background:var(--line)}
+.tcv__line::after{content:"";position:absolute;inset:0;background:var(--accent);transform-origin:left;animation:tcv-grow 3s infinite}
+@keyframes tcv-grow{0%{transform:scaleX(0)}40%,100%{transform:scaleX(1)}}
+.tcv__x{color:var(--accent);font-size:12px;animation:tcv-pop 3s infinite}
+@keyframes tcv-pop{0%,40%{opacity:0;transform:scale(.4)}50%,90%{opacity:1;transform:none}100%{opacity:0}}
+.tcv--2 .tcv__lbl{animation:tcv-show 3s infinite}
+@keyframes tcv-show{0%,45%{opacity:.25}55%,95%{opacity:1}100%{opacity:.25}}
+.tcv__doc{display:grid;gap:4px;width:84px}
+.tcv__doc i{height:3px;border-radius:2px;background:var(--muted);transform-origin:right;animation:tcv-wipe 3.4s infinite}
+.tcv__doc i:nth-child(2){width:80%;animation-delay:.15s}.tcv__doc i:nth-child(3){width:60%;animation-delay:.3s}
+@keyframes tcv-wipe{0%,30%{transform:scaleX(1);opacity:.7}55%,84%{transform:scaleX(0);opacity:.7}85%{transform:scaleX(1);opacity:0}100%{opacity:.7}}
+.tcv__box{position:relative;width:30px;height:30px;border:1px dashed rgba(255,90,31,.6);border-radius:6px;display:grid;place-items:center;animation:tcv-wall 2.4s infinite}
+.tcv__box i{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+.tcv__box::before{content:"";position:absolute;inset:13px;border:1px solid var(--accent);border-radius:50%;animation:tcv-ring 2.4s infinite}
+@keyframes tcv-ring{0%{inset:13px;opacity:1}70%{inset:2px;opacity:.9}100%{inset:2px;opacity:0}}
+@keyframes tcv-wall{0%,65%{border-color:rgba(255,90,31,.4)}72%{border-color:var(--accent);box-shadow:0 0 0 3px rgba(255,90,31,.15)}100%{border-color:rgba(255,90,31,.4)}}
+/* trust: security program, controls and documents come in as they scroll into view */
+.tc-st{position:relative;overflow:hidden}
+.tc-badge--done,.tc-badge--prog{display:inline-flex;align-items:center;gap:6px}
+.tc-badge--done::before,.tc-badge--prog::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.tc-badge--done::before{animation:tcv-ping 2.4s infinite}
+.tc-badge--prog::before{animation:cfg-blink 1.2s steps(2) infinite}
+@keyframes tcv-ping{0%{box-shadow:0 0 0 0 rgba(34,197,94,.6)}70%,100%{box-shadow:0 0 0 6px rgba(34,197,94,0)}}
+.tc-grid.reveal .tc-st::after{content:"";position:absolute;left:0;right:0;top:0;height:40%;background:linear-gradient(180deg,transparent,rgba(34,197,94,.08) 80%,rgba(34,197,94,.5) 100%);transform:translateY(-100%);pointer-events:none}
+.tc-grid.reveal.in .tc-st::after{animation:tc-scan 1.4s cubic-bezier(.4,0,.2,1) calc(.2s + var(--n,0)*.15s) both}
+@keyframes tc-scan{from{transform:translateY(-100%)}to{transform:translateY(260%)}}
+.tc-st:nth-child(2){--n:1}.tc-st:nth-child(3){--n:2}.tc-st:nth-child(4){--n:3}.tc-st:nth-child(5){--n:4}.tc-st:nth-child(6){--n:5}
+.site__prose .tc-ctl ul{list-style:none;padding-left:0}
+.tc-ctl li{position:relative;padding-left:22px}
+.tc-ctl li::before{content:"✓";position:absolute;left:0;top:0;color:var(--green);font-size:13px}
+.tc-grid.reveal .tc-ctl li{opacity:0;transform:translateX(-8px);transition:opacity .4s,transform .4s}
+.tc-grid.reveal.in .tc-ctl li{opacity:1;transform:none}
+.tc-ctl li:nth-child(2){transition-delay:.25s!important}.tc-ctl li:nth-child(3){transition-delay:.5s!important}
+.tc-ctl:nth-child(n+2) li{transition-delay:.15s}
+.tc-docs.reveal .tc-doc{opacity:0;transform:translateY(8px);transition:opacity .5s,transform .5s,background .2s}
+.tc-docs.reveal.in .tc-doc{opacity:1;transform:none}
+.tc-doc:nth-child(2){transition-delay:.06s}.tc-doc:nth-child(3){transition-delay:.12s}.tc-doc:nth-child(4){transition-delay:.18s}.tc-doc:nth-child(5){transition-delay:.24s}.tc-doc:nth-child(6){transition-delay:.3s}.tc-doc:nth-child(7){transition-delay:.36s}.tc-doc:nth-child(8){transition-delay:.42s}
+@media (prefers-reduced-motion:reduce){.tcv *,.tcv::before,.tcv *::before,.tcv *::after,.tc-badge--done::before,.tc-badge--prog::before{animation:none!important}.tcv__toks i{background:var(--accent)}.tc-grid.reveal .tc-st::after{display:none}.tc-grid.reveal .tc-ctl li,.tc-docs.reveal .tc-doc{opacity:1;transform:none}}
