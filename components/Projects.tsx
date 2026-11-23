@@ -1,6 +1,7 @@
 import { cases } from "@/content/work";
 import Head from "./Head";
 import CardArt from "./CardArt";
+import UseCaseMap from "./UseCaseMap";
 import { Arrow } from "./ui";
 
 export default function Projects() {
@@ -13,7 +14,7 @@ export default function Projects() {
         <div className="cases">
           {cases.map(c => (
             <article className="case reveal" key={c.title}>
-              <div className="case__img"><CardArt art={c.art === "terminal" ? "agent" : c.art} alt={c.alt} /><span className="chip mono"><i className="dot"></i>{c.tool}</span></div>
+              <div className="case__img">{c.art === "terminal" ? <UseCaseMap /> : <CardArt art={c.art} alt={c.alt} />}<span className="chip mono"><i className="dot"></i>{c.tool}</span></div>
               <div className="case__body">
                 <p className="mono meta"><span className="accent">{c.kind}</span> / {c.status}</p>
                 <h3>{c.title}</h3>

@@ -24,10 +24,20 @@ export default function PageEffects({ intro = true }: { intro?: boolean }) {
     };
     arts.forEach(a => { artIo.observe(a); a.closest(".post, .case")?.addEventListener("mouseenter", replay); });
 
+    // isometric maps (SMIL): run only while on screen; with reduced motion, hold the finished frame
+    const still = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const maps = [...document.querySelectorAll<SVGSVGElement>(".ucmap svg")];
+    const mapIo = new IntersectionObserver(entries => entries.forEach(e => {
+      const m = e.target as SVGSVGElement;
+      if (still) { m.setCurrentTime(+(m.dataset.still ?? 0)); m.pauseAnimations(); }
+      else if (e.isIntersecting) m.unpauseAnimations(); else m.pauseAnimations();
+    }));
+    maps.forEach(m => mapIo.observe(m));
+
     // no intro: mark the page built so the boot script's section hiding lifts at once
     const stopSwarm = intro ? startSwarmBuild() : (document.documentElement.classList.add("swb-ready"), () => document.documentElement.classList.remove("swb-ready"));
     return () => { cancelAnimationFrame(raf1); cancelAnimationFrame(raf2); io.disconnect(); stopSwarm();
-      artIo.disconnect(); arts.forEach(a => a.closest(".post, .case")?.removeEventListener("mouseenter", replay)); };
+      artIo.disconnect(); mapIo.disconnect(); arts.forEach(a => a.closest(".post, .case")?.removeEventListener("mouseenter", replay)); };
   }, [intro]);
   return null;
 }

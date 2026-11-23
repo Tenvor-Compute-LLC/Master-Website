@@ -850,3 +850,56 @@ a.tc-card:hover{border-color:rgba(255,90,31,.5);transform:translateY(-2px)}
 .cf__seg span{display:block;text-align:center;padding:8px 10px;border-radius:7px;font-size:14px;color:var(--muted);transition:background .25s,color .25s}
 .cf__seg input:checked+span{background:rgba(255,90,31,.14);color:var(--text);box-shadow:inset 0 0 0 1px rgba(255,90,31,.45)}
 .cf__seg input:focus-visible+span{outline:2px solid var(--accent);outline-offset:2px}
+
+/* use cases: isometric network map */
+.ucmap{position:absolute;inset:0;overflow:hidden;display:grid;place-items:center;padding:56px 12px 12px;background:radial-gradient(60% 70% at 50% 55%,rgba(255,90,31,.07),transparent 70%),var(--card)}
+.ucmap svg{display:block;width:100%;height:100%}
+.ucmap .rays path{stroke:var(--accent);stroke-opacity:.22;stroke-dasharray:3 7;fill:none}
+.ucmap .slab .t{fill:#16161a;stroke:var(--accent);stroke-width:1.5}
+.ucmap .slab .l,.ucmap .slab .r{fill:#1d1410;stroke:var(--accent);stroke-width:1}
+.ucmap .slab-ghost{fill:none;stroke:var(--accent);stroke-opacity:.25}
+.ucmap .grid path{stroke:#f2f1ec;stroke-opacity:.06;fill:none}
+.ucmap .lanes path{fill:none;stroke:var(--accent);stroke-width:3;stroke-opacity:.45;stroke-linejoin:round;filter:drop-shadow(0 0 4px rgba(255,90,31,.6))}
+.ucmap .lanes .flow{stroke:#ffb08f;stroke-width:1.5;stroke-opacity:.9;stroke-dasharray:6 18;filter:none;animation:ucflow 1.4s linear infinite}
+@keyframes ucflow{to{stroke-dashoffset:-24}}
+.ucmap .ring{fill:rgba(255,90,31,.08);stroke:var(--accent);stroke-dasharray:4 4;transform-box:fill-box;transform-origin:center;animation:ucring 2.6s ease-out infinite}
+@keyframes ucring{0%{transform:scale(.6);opacity:1}100%{transform:scale(1.25);opacity:0}}
+.ucmap .desk .t{fill:#3a3a40}.ucmap .desk .l{fill:#26262b}.ucmap .desk .r{fill:#2e2e34}
+.ucmap .desk polygon{stroke:#f2f1ec;stroke-opacity:.18;stroke-width:.8}
+.ucmap .screen .t,.ucmap .screen .r{fill:#2e2e34}
+.ucmap .cube .t{fill:#ff8a5c}.ucmap .cube .l{fill:#e5480f}.ucmap .cube .r{fill:#ff5a1f}
+.ucmap .tok .t{fill:#f2f1ec}.ucmap .tok .l{fill:#b9b8b2}.ucmap .tok .r{fill:#d8d7d1}
+.ucmap .rack .t{fill:#3a2117}.ucmap .rack .l{fill:#24140e}.ucmap .rack .r{fill:#2c1911}
+.ucmap .rack polygon{stroke:var(--accent);stroke-width:1.2}
+.ucmap .slot{stroke:var(--accent);stroke-opacity:.45;fill:none}
+.ucmap .led{fill:var(--green);animation:ucled 2.4s steps(2) infinite}
+@keyframes ucled{50%{fill:#ff8a5c}}
+.ucmap .hub .t{fill:var(--accent)}.ucmap .hub .l{fill:#c43f0e}.ucmap .hub .r{fill:#e5480f}
+.ucmap .hub polygon{stroke:#ffb08f;stroke-width:1}
+.ucmap .sign line{stroke:#f2f1ec;stroke-opacity:.7}
+.ucmap .sign circle{fill:#f2f1ec}
+.ucmap .sign rect{fill:var(--bg);stroke:var(--accent);stroke-width:1.2}
+.ucmap .sign text{fill:var(--text);font:500 13px var(--mono);letter-spacing:.08em}
+.ucmap .sign--hot rect{fill:var(--accent)}
+.ucmap .sign--hot text{fill:var(--ink)}
+.js .ucmap .drop{opacity:0;transform:translateY(-36px);transition:opacity .7s,transform .9s cubic-bezier(.22,1,.36,1)}
+.js .ucmap.in .drop{opacity:1;transform:none}
+.ucmap .gate .t{fill:#ffb547}.ucmap .gate .l{fill:#b97a1c}.ucmap .gate .r{fill:#d98f24}
+.ucmap .gate--ok .t{fill:var(--green)}.ucmap .gate--ok .l{fill:#2a9c5e}.ucmap .gate--ok .r{fill:#33b870}
+.ucmap .gate--ok{filter:drop-shadow(0 0 6px rgba(61,220,132,.8))}
+.ucmap .ok rect{fill:#0f2a1c;stroke:var(--green)}.ucmap .ok text{fill:var(--green);font:600 11px var(--mono);letter-spacing:.06em}
+.ucmap .screen .l{fill:#0d0d10;stroke:var(--accent);stroke-opacity:.5;stroke-width:.8}
+.ucmap .tl{fill:#d8d7d1}.ucmap .tl--o{fill:var(--accent)}.ucmap .tl--a{fill:#ffb547}.ucmap .tl--g{fill:var(--green)}
+.ucmap .comet{fill:none;stroke:#ffd2bf;stroke-width:3.5;stroke-linecap:round;filter:drop-shadow(0 0 5px #ff5a1f)}
+.ucmap .comet--back{stroke:#fff;filter:drop-shadow(0 0 5px rgba(242,241,236,.9))}
+.ucmap .hit{fill:none;stroke:#ffb08f;stroke-width:1.5}
+.ucmap .hub-spin{fill:none;stroke:#ffe0d3;stroke-width:1.2;stroke-dasharray:6 5;animation:ucflow 1.6s linear infinite}
+.ucmap .rack-glow{fill:#ff8a5c;filter:drop-shadow(0 0 10px #ff5a1f)}
+.ucmap .heat{fill:#ff8a5c;opacity:0;animation:ucheat 1.8s ease-out infinite}
+@keyframes ucheat{0%{opacity:0;transform:translateY(0)}30%{opacity:.8}100%{opacity:0;transform:translateY(-26px)}}
+@media (max-width:600px){.ucmap{padding:52px 4px 4px}.ucmap .sign text{font-size:15px}}
+@media (prefers-reduced-motion:reduce){
+  .ucmap .pkt,.ucmap .ring,.ucmap .comet,.ucmap .hit,.ucmap .heat{display:none}
+  .ucmap .lanes .flow,.ucmap .led,.ucmap .hub-spin{animation:none}
+  .js .ucmap .drop{opacity:1;transform:none;transition:none}
+}
