@@ -47,7 +47,7 @@ export default function ModelRoster() {
         <div className="ros__top"><span className="mono ros__st ros__st--next">next</span><b>{next.name}</b><span className="mono ros__soon">{next.status}</span></div>
         <p className="mono ros__meta">{next.specs.map(s => s[1]).join(" · ")}</p>
       </div>
-      <a href="#roadmap" className="mono ros__road"><span className="ros__dots">{roadmap.models.map(m => <i key={m.name} style={{ "--r": Math.sqrt(m.total / 1000) * 13 } as CSSProperties}></i>)}</span>+{roadmap.models.length} bigger models {roadmap.label.toLowerCase()} <span className="accent">→</span></a>
+      <a href="#roadmap" className="mono ros__road"><span className="ros__dots">{roadmap.models.map(m => <i key={m.name} style={{ "--r": m.total / 1000 * 28 } as CSSProperties}></i>)}</span>+{roadmap.models.length} bigger models {roadmap.label.toLowerCase()} <span className="accent">→</span></a>
       <p className="mono chat__note">New open models are added as they&apos;re released.</p>
     </div>
   );

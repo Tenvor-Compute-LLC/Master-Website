@@ -60,18 +60,23 @@ export default function Page() {
         <section className="sec" id="roadmap">
           <div className="wrap">
             <Head num="04" eyebrow={roadmap.label} title={roadmap.title} side={roadmap.side} />
-            {/* circle area matches total parameters, the glowing core matches parameters active per token; 1T = 150px radius */}
-            <div className="orbs reveal">
-              {[{ name: live.name, maker: "Live today", total: 35, active: 3, size: "35B · 3B active", live: true }, ...roadmap.models.map(m => ({ ...m, live: false }))].map((m, i) => (
-                <div className={`orb${m.live ? " orb--live" : ""}`} key={m.name} style={{ "--r": Math.sqrt(m.total / 1000) * 150, "--c": Math.sqrt(m.active / 1000) * 150, "--i": i } as CSSProperties}>
-                  <div className="orb__ball"><span className="orb__core"></span></div>
-                  <b>{m.name}</b>
-                  <small className="mono">{m.live ? <><i className="dot"></i>{m.maker}</> : m.maker}</small>
-                  <small className="mono orb__size">{m.size}</small>
-                </div>
-              ))}
+            {/* bar length is total parameters against 1T; the solid part is parameters active per token */}
+            <div className="d-tbl d-tbl--fit rm reveal">
+              <table>
+                <thead><tr><th scope="col">Model</th><th scope="col"><span className="s-vh">Size to scale</span></th><th scope="col" className="rm__n">Total</th><th scope="col" className="rm__n">Active</th></tr></thead>
+                <tbody>
+                  {[{ name: live.name, maker: "Live today", total: 35, active: 3, live: true }, ...roadmap.models.map(m => ({ ...m, live: false }))].map((m, i) => (
+                    <tr key={m.name} className={m.live ? "rm__live" : undefined}>
+                      <th scope="row"><b>{m.name}</b><small>{m.live ? <><i className="dot"></i> {m.maker}</> : m.maker}</small></th>
+                      <td className="rm__bar" aria-hidden="true"><span style={{ "--t": m.total / 1000, "--a": m.active / m.total, "--i": i } as CSSProperties}><i></i></span></td>
+                      <td className="rm__n">{m.total >= 1000 ? "1T" : `${m.total}B`}</td>
+                      <td className="rm__n">{m.active}B</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
-            <p className="mono orbs__key"><span><i className="orbs__ring"></i>Circle: total parameters</span><span><i className="orbs__dot"></i>Core: active for each token</span><span><i className="orbs__dash"></i>{roadmap.label}</span></p>
+            <p className="mono rm__key">Bars to scale · solid part is active for each token</p>
           </div>
         </section>
 
