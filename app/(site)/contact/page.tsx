@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import DotArt from "@/components/DotArt";
 import ContactForm from "@/components/ContactForm";
 import PageEffects from "@/components/PageEffects";
 import { Eyebrow } from "@/components/ui";
@@ -13,13 +12,12 @@ export default function Page() {
   return (
     <main className="docs site">
       <div className="wrap">
-        <header className="docs__head split chat">
+        <header className="docs__head">
           <div>
             <Eyebrow>Contact</Eyebrow>
             <h1 className="display">How can we help?</h1>
             <p className="lead">{intro}</p>
           </div>
-          <DotArt scene="contact" label="A message goes out and a reply comes back" />
         </header>
         <div className="docs__body site__body"><ContactForm /></div>
       </div>

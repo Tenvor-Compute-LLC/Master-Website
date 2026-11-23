@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { describe, ld, pageMeta } from "@/lib/seo";
 import SitePageView from "@/components/SitePage";
-import DotArt from "@/components/DotArt";
 import page from "@/content/pages/trust";
 
 export const metadata: Metadata = pageMeta("Trust center | Tenvor", page.path, page.intro);
@@ -14,5 +13,5 @@ const trustLd = {
 };
 
 export default function Page() {
-  return <><script type="application/ld+json" dangerouslySetInnerHTML={ld(trustLd)} /><SitePageView page={page} aside={<DotArt scene="trust" label="A request travels plain, scrambled in transit, then into a sealed container where it is erased" />} /></>;
+  return <><script type="application/ld+json" dangerouslySetInnerHTML={ld(trustLd)} /><SitePageView page={page} /></>;
 }

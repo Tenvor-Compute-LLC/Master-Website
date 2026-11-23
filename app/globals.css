@@ -1156,4 +1156,3 @@ a.tc-card:hover{border-color:rgba(255,90,31,.5);transform:translateY(-2px)}
 .tc-docs.reveal.in .tc-doc{opacity:1;transform:none}
 .tc-doc:nth-child(2){transition-delay:.06s}.tc-doc:nth-child(3){transition-delay:.12s}.tc-doc:nth-child(4){transition-delay:.18s}.tc-doc:nth-child(5){transition-delay:.24s}.tc-doc:nth-child(6){transition-delay:.3s}.tc-doc:nth-child(7){transition-delay:.36s}.tc-doc:nth-child(8){transition-delay:.42s}
 @media (prefers-reduced-motion:reduce){.tc-badge--done::before,.tc-badge--prog::before{animation:none!important}.tc-grid.reveal .tc-st::after{display:none}.tc-grid.reveal .tc-ctl li,.tc-docs.reveal .tc-doc{opacity:1;transform:none}}
-.dotart{display:block;width:100%;max-width:520px;margin:0 auto;align-self:center}

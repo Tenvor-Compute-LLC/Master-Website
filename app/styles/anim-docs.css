@@ -2,8 +2,6 @@
 .docs__body pre.dt-arm .d-l{opacity:0}
 .docs__body pre.dt-go .d-l{animation:dt-line .3s ease both;animation-delay:calc(var(--i,0) * 45ms)}
 @keyframes dt-line{from{opacity:0}to{opacity:1}}
-.dotart .tf__list{gap:14px}
-.dotart__reply{min-height:1.4em}
 @media (prefers-reduced-motion: reduce){.docs__body pre.dt-arm .d-l{opacity:1;animation:none}}
 /* products: stats count up once */
 .stats b{font-variant-numeric:tabular-nums}
@@ -18,5 +16,3 @@
 .prc__rows li.prc__sum b{color:var(--accent)}
 @media (max-width:700px){.prc__rows{grid-template-columns:1fr 1fr}}
 /* docs head with the request card beside it: the title shares the row, so it steps down a size */
-.docs__head.split:has(.dotart) .display{font-size:clamp(40px,5.6vw,80px);overflow-wrap:break-word}
-.docs__head.split:has(.dotart) .btns{margin-top:32px}

@@ -1,7 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import PageEffects from "@/components/PageEffects";
-import DotArt from "@/components/DotArt";
 import LegalReading from "@/components/LegalReading";
 import "@/app/styles/anim-legal.css";
 import { Eyebrow } from "@/components/ui";
@@ -20,7 +19,7 @@ function LegalSide({ page, toc = true }: { page: SitePage; toc?: boolean }) {
 /** A content page in the docs frame: head, then the source markup; legal documents get the policy library sidebar. */
 export default function SitePageView({ page, aside }: { page: SitePage; aside?: ReactNode }) {
   const legal = page.path.startsWith("/legal/");
-  const side = aside ?? (legal ? <DotArt scene="legal" label="Lines of a policy, read top to bottom" /> : undefined);
+  const side = aside;
   const body = <div className="docs__prose site__prose" dangerouslySetInnerHTML={{ __html: page.html }} />;
   return (
     <main className="docs site">
