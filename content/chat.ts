@@ -1,5 +1,5 @@
 // Text of https://tenvor.io/chat (captured 2026-11-20), word for word, split by section.
-export const CONSOLE = "https://tenvor.io/console";
+export const CONSOLE = "https://app.tenvor.io";
 
 export const hero = {
   title: "Chat that can do the work.",

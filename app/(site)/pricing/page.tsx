@@ -19,7 +19,7 @@ export default function Page() {
         <Pricing />
         <FAQ />
         <CtaBand num="03" eyebrow="Get started" title="Start free, no card." text="Start with a free API key and $0.25 of credit. No card needed, no subscription."
-          primary={{ href: "https://tenvor.io/console", label: "Get an API key" }} secondary={{ href: "/contact", label: "Talk to us" }} />
+          primary={{ href: "https://app.tenvor.io", label: "Get an API key" }} secondary={{ href: "/contact", label: "Talk to us" }} />
       </main>
       <PageEffects intro={false} />
     </>

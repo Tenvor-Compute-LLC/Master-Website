@@ -69,7 +69,7 @@ Set them in Vercel (Settings → Environment Variables, tick **Production**). Fo
 
 ## Site facts worth knowing
 - Card payments are processed by **Stripe**. Tenvor never sees or stores card numbers.
-- The **Login** button in the nav opens the console at https://tenvor.io/console.
+- The **Login** button in the nav opens the console at https://app.tenvor.io.
 - Careers link: https://binary.so/tenvor.
 - Integrations and the Ecosystem strip list tools that accept an OpenAI-compatible API. Only the OpenAI SDKs, curl, Pi, OpenCode and JetBrains AI Assistant have Tenvor setup guides.
 

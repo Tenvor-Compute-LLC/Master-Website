@@ -10,7 +10,7 @@ import { abliterated, head, live, next, roadmap, use } from "@/content/models";
 
 export const metadata: Metadata = pageMeta("Models | Tenvor", "/models", head.intro);
 
-const CONSOLE = "https://tenvor.io/console";
+const CONSOLE = "https://app.tenvor.io";
 /** Strings green, comments grey: enough colour for a six-line sample. */
 const py = (l: string) => l.startsWith("#") ? <span className="d-c">{l}</span>
   : l.split(/("[^"]*")/).map((p, i) => i % 2 ? <span key={i} className="d-s">{p}</span> : p);

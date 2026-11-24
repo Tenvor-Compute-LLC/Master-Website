@@ -7,7 +7,7 @@ export default function Services() {
       <div className="wrap">
         <Head num="01" h1 eyebrow="Products" title="One GPU network, six ways to use it."
           side="Start with a free API key and $0.25 of credit. No card needed, no subscription."
-          cta={{ href: "https://tenvor.io/console", label: "Get an API key" }} />
+          cta={{ href: "https://app.tenvor.io", label: "Get an API key" }} />
         <div className="svc">
           {services.map((s, i) => (
             <div className="svc__row reveal" key={s.title}>

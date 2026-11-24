@@ -10,7 +10,7 @@ export const plans = {
 export type PlanId = keyof typeof plans;
 export const isPlan = (p: unknown): p is PlanId => typeof p === "string" && Object.hasOwn(plans, p);
 
-const console_ = "https://tenvor.io/console";
+const console_ = "https://app.tenvor.io";
 
 export function checkoutPage(id: PlanId): SitePage {
   const p = plans[id];

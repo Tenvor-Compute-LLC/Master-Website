@@ -1,5 +1,5 @@
 // Text of https://tenvor.io/developers (captured 2026-11-20), word for word, split by section.
-export const CONSOLE = "https://tenvor.io/console";
+export const CONSOLE = "https://app.tenvor.io";
 
 export const hero = {
   title: "One API call. Routed to the best machine.",
@@ -109,6 +109,6 @@ export const alpha = [
 
 export const steps = [
   { name: "Sign up", text: "New accounts start with $0.25 of free credit. No card needed." },
-  { name: "Create an API key", text: "In the <a href=\"https://tenvor.io/console\" target=\"_blank\" rel=\"noopener\">Console</a>. Keys look like <code>sk-dc-…</code>" },
+  { name: "Create an API key", text: "In the <a href=\"https://app.tenvor.io\" target=\"_blank\" rel=\"noopener\">Console</a>. Keys look like <code>sk-dc-…</code>" },
   { name: "Change your base URL", text: "Keep your SDK. The model id is <code>chat-35b-moe</code>" },
 ];

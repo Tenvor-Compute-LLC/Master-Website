@@ -71,7 +71,7 @@ export default function Nav() {
         </nav>
         <div className="nav__right">
           <Link className="status mono" href="/operators"><i className="dot"></i>Earn while Idle</Link>
-          <Btn href="https://tenvor.io/console" variant="accent">Login</Btn>
+          <Btn href="https://app.tenvor.io" variant="accent">Login</Btn>
           <button className="burger" aria-label="Open menu" aria-expanded={open} aria-controls="menu" onClick={() => setOpen(o => !o)}><span></span><span></span></button>
         </div>
       </div>

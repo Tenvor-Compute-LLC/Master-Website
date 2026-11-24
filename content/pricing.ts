@@ -12,7 +12,7 @@ export type Plan = {
 };
 
 export const contactHref = "mailto:support@tenvor.io?subject=Tenvor%20team%20or%20enterprise%20pricing";
-const consoleHref = "https://tenvor.io/console";
+const consoleHref = "https://app.tenvor.io";
 
 export const monthly: Plan[] = [
   {

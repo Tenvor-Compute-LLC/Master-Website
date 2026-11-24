@@ -11,7 +11,7 @@ export default function Hero() {
         <div className="hero__row reveal">
           <p className="lead">One orchestration layer for open models, running across distributed GPUs in sealed containers. Start free with no card.</p>
           <div className="btns">
-            <Btn href="https://tenvor.io/console" variant="accent">Get an API key</Btn>
+            <Btn href="https://app.tenvor.io" variant="accent">Get an API key</Btn>
             <Btn href="/docs/quickstart" variant="ghost">Read the quickstart</Btn>
           </div>
         </div>
