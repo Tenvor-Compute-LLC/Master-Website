@@ -82,3 +82,6 @@ Set them in Vercel (Settings → Environment Variables, tick **Production**). Fo
 - In `next dev`, React Strict Mode runs effects twice; production runs them once.
 - The dev server allows `127.0.0.1` as an origin (`allowedDevOrigins`).
 - `drafts/` is local working material and must never be committed (stage with `git add -A -- . ':!drafts'`).
+
+## Author
+Created by Vishva Patel - Vishva@tenvor.io
