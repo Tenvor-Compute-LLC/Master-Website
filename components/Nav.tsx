@@ -67,10 +67,10 @@ export default function Nav() {
               </div>
             );
           })}
-          <Link className="nav__join" href="/operators" onClick={close}><i className="dot"></i>Earn while Idle</Link>
+          <Link className="nav__join" href="/operators" onClick={close}><i className="dot"></i>Run a node</Link>
         </nav>
         <div className="nav__right">
-          <Link className="status mono" href="/operators"><i className="dot"></i>Earn while Idle</Link>
+          <Btn href="/operators" variant="ghost">Run a node</Btn>
           <Btn href="https://app.tenvor.io" variant="accent">Login</Btn>
           <button className="burger" aria-label="Open menu" aria-expanded={open} aria-controls="menu" onClick={() => setOpen(o => !o)}><span></span><span></span></button>
         </div>

@@ -49,3 +49,6 @@ export function H2({ wide, h1, children }: { wide?: boolean; h1?: boolean; child
   const Tag = h1 ? "h1" : "h2";
   return <Tag className={`h2${wide ? " h2--wide" : ""}`}><Words>{children}</Words></Tag>;
 }
+
+/** The one-line pitch used on Home and About. */
+export const AirbnbLine = () => <>Think <span className="accent">Airbnb for idle GPUs</span>: owners list spare capacity, developers get one API, and Tenvor runs everything in between.</>;

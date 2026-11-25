@@ -256,7 +256,7 @@ ul,ol{list-style:none}
   .burger{display:flex}
   .nav__links{position:absolute;top:72px;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding:8px var(--pad) 20px;display:none}
   .nav.open .nav__links{display:flex}
-  .nav__right .status{display:none}
+  .nav__right .btn--ghost{display:none}
   .nav__join{display:block}
   .nav__links a{padding:14px 0;border-bottom:1px solid var(--line);font-size:18px}
   .split,.foot__top{grid-template-columns:1fr}

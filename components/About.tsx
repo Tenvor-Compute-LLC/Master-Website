@@ -3,7 +3,7 @@ import type React from "react";
 import { useEffect, useRef, useState } from "react";
 import { about } from "@/content/about";
 import Head from "./Head";
-import { Eyebrow } from "./ui";
+import { AirbnbLine, Eyebrow } from "./ui";
 
 // World dot map: rough continent outlines as [lon, lat] polygons, sampled on a 3° grid. Accuracy is a dot map's, not an atlas's.
 const LAND: number[][][] = [
@@ -152,7 +152,7 @@ export default function About() {
   return (
     <section className="sec" id="about">
       <div className="wrap">
-        <Head h1 num={about.num} eyebrow={about.eyebrow} title={about.title} side={about.side} />
+        <Head h1 num={about.num} eyebrow={about.eyebrow} title={about.title} side={<><AirbnbLine /><br /><br />{about.side}</>} />
         <Eyebrow>{about.storyLabel}</Eyebrow>
         <Story />
         <div className="about__team">
